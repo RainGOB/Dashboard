@@ -1,0 +1,15 @@
+stm32f429zgt6\lv_hal_tick.o: ..\Middlewares\LVGL\GUI\lvgl\src\hal\lv_hal_tick.c
+stm32f429zgt6\lv_hal_tick.o: ..\Middlewares\LVGL\GUI\lvgl\src\hal\lv_hal_tick.h
+stm32f429zgt6\lv_hal_tick.o: ..\Middlewares\LVGL\GUI\lvgl\src\hal\../lv_conf_internal.h
+stm32f429zgt6\lv_hal_tick.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+stm32f429zgt6\lv_hal_tick.o: ..\Middlewares\LVGL\GUI\lvgl\src\hal\../lv_conf_kconfig.h
+stm32f429zgt6\lv_hal_tick.o: ../Middlewares/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
+stm32f429zgt6\lv_hal_tick.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+stm32f429zgt6\lv_hal_tick.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+stm32f429zgt6\lv_hal_tick.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+stm32f429zgt6\lv_hal_tick.o: ../Core/Inc/FreeRTOSConfig.h
+stm32f429zgt6\lv_hal_tick.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+stm32f429zgt6\lv_hal_tick.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+stm32f429zgt6\lv_hal_tick.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+stm32f429zgt6\lv_hal_tick.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+stm32f429zgt6\lv_hal_tick.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
