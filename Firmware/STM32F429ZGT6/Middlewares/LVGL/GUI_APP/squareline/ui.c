@@ -5,7 +5,6 @@
 
 #include "ui.h"
 #include "ui_helpers.h"
-#include "Variable.h"
 
 ///////////////////// VARIABLES ////////////////////
 
@@ -55,7 +54,6 @@ lv_obj_t * ui_Hbattery_allert;
 lv_obj_t * ui____initial_actions0;
 
 uint32_t SLIDER_LOAD_OVER;
-uint32_t MQTT_INIT_OK;
 uint8_t barFlag = 1;
 ///////////////////// TEST LVGL SETTINGS ////////////////////
 #if LV_COLOR_DEPTH != 16
@@ -115,18 +113,6 @@ void sendEventCode()
 	{
 		barFlag = 0; //当该值为0时，进度条停止增长
 		lv_event_send(ui_Slider2, SLIDER_LOAD_OVER, NULL);
-	}
-}
-void ui_event_internet_icon(lv_event_t * e){
-	lv_event_code_t event_code = lv_event_get_code(e);
-	lv_obj_t * target = lv_event_get_target(e);
-	if(event_code == MQTT_INIT_OK){
-		if(MQTTClient_RdyFlag){
-			lv_obj_clear_flag(ui_internet, LV_OBJ_FLAG_HIDDEN);
-		}
-		else{
-			lv_obj_add_flag(ui_internet, LV_OBJ_FLAG_HIDDEN);
-		}
 	}
 }
 ///////////////////// SCREENS ////////////////////

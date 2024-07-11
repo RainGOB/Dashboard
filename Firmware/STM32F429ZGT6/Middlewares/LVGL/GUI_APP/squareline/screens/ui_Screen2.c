@@ -223,7 +223,6 @@ void ui_Screen2_screen_init(void)
     lv_obj_set_align(ui_internet, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_internet, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
     lv_obj_clear_flag(ui_internet, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-	lv_obj_add_flag(ui_internet,LV_OBJ_FLAG_HIDDEN);
 
     ui_LmotorTem = lv_label_create(ui_Screen2);
     lv_obj_set_width(ui_LmotorTem, LV_SIZE_CONTENT);   /// 1
@@ -295,7 +294,4 @@ void ui_Screen2_screen_init(void)
     lv_obj_add_event_cb(ui_Arc3, ui_event_Arc3, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_power_battery_Slider, ui_event_power_battery_Slider, LV_EVENT_ALL, NULL);
 
-	MQTT_INIT_OK = lv_event_register_id();
-	lv_obj_add_event_cb(ui_internet,ui_event_internet_icon,LV_EVENT_ALL,NULL);
-	
 }

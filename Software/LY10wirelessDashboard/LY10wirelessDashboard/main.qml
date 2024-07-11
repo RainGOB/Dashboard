@@ -10,8 +10,8 @@ import MqttClient
 Window {
 
     visible: true
-    width: 1250
-    height: 680
+    width: 1300
+    height: 700
     color: "#666666"
     //    property alias rectangleX: rectangle.x
     title:  qsTr("LY10-WirelessDashboard")
@@ -64,9 +64,6 @@ Window {
         lmotorSpeed: 0
         rmotorSpeed: 0
         angle: 90
-        acc_x: 7
-        acc_y: 7
-        acc_z: -10
        // onCarModeChanged: {
        //     if(carMode === 0)
        //     {
@@ -1132,120 +1129,12 @@ Window {
         }
     }
 
-    //加速度仪表
-    Item {
+    Accelaratorindicator{
         id:accelarate
         x:500; y:250
-        width: 180
-        height: 180
-
-        Rectangle{
-            id:accelaratedash
-            width: parent.width
-            height: parent.height
-            color:"#333333"
-            anchors.centerIn: parent
-            anchors.topMargin: 30
-            anchors.leftMargin: 30
-            radius: width/2
-            Rectangle{
-                anchors.centerIn: parent
-                width: parent.width-10
-                height: parent.height-10
-                radius: width/2
-                color: "#333333"
-                border.color: "white"
-                border.width: 2
-            }
-        }
-
-        Canvas{
-            id:accelaratecanvas
-            anchors.fill: parent
-            contextType: "2d"
-            onPaint: {
-                var cav = getContext("2d");
-                cav.strokeStyle = "white"
-                cav.lineWidth = 0.5
-
-                cav.moveTo(parent.width/2, parent.width/2)
-                cav.beginPath()
-                cav.arc(parent.width/2,parent.width/2,60,0,Math.PI * 2,true)
-                cav.stroke()
-
-                cav.beginPath()
-                cav.arc(parent.width/2,parent.width/2,40,0,Math.PI * 2,true)
-                cav.stroke()
-
-                cav.beginPath()
-                cav.arc(parent.width/2,parent.width/2,20,0,Math.PI *2,true)
-                cav.stroke()
-            }
-        }
-        Rectangle{
-            id:indicator
-            width: 9
-            height: width
-            x:-10-width/2+carclient.acc_x/20*100; y:-10-height/2+carclient.acc_y/20*100
-            color:"red"
-            radius: width/2
-            opacity: 0.8
-        }
-
-        Item  {
-            id:acczbash
-            x:240
-            width: parent.width/10
-            height: parent.height
-            Rectangle{
-                id:acczbashl
-                y:10
-                width:parent.width
-                height: parent.width
-                color:"#333333"
-                radius: width/2
-            }
-            Rectangle{
-                id:acczbashb
-                y:parent.width/2+10
-                width: parent.width
-                height: parent.height-30
-                color:"#333333"
-            }
-            Rectangle{
-                id:acczbashr
-                y:parent.height-20
-                width:parent.width
-                height: parent.width
-                color:"#333333"
-                radius: width/2
-            }
-
-        }
-
-        Item {
-            id:acczindicator
-            x:240; y:160-(carclient.acc_z/20)*(parent.height-30); z:1
-            width: acczbash.width
-            Rectangle{
-                id:acczcircle
-                width:parent.width
-                height: parent.width
-                color:"#99ccff"
-                radius: 100
-    //           Text {
-    //                id: acczdisp
-    //                text: Math.abs(anglesensor.value - 90)
-    //                anchors.centerIn: parent
-    //                color: "#99ccff"
-    //                font.pixelSize: 12
-    //                font.family: "Tensentype ZhiHeiJ-W4"
-    //            }
-            }
-            Behavior on x {
-                SmoothedAnimation { velocity: 1000 }
-            }
-        }
+        acc_x: 0
+        acc_y: 0
+        acc_z: 0
     }
 
     Item {
@@ -1319,17 +1208,7 @@ Window {
             subscribebut.enabled = false
         }
     }
-    Button{
-        id:  saveNut
-        x:700; y:500
-        width: 80
-        height:  20
-        flat:  false
-        text:  "save"
-        onClicked: {
 
-        }
-    }
 
     BorderImage {
         id: borderImage

@@ -140,12 +140,12 @@ void MQTT_Pubdata(char *MQTTdata){
 }
 
 void jsonPack(void)//json打包 分段 heap太小一次性打包不下
-{
+{ 
 	static uint8_t changeFlag;
-	//char json0[] = "{\"cSpeed\": %d,\"Pos\": %d,\"bAlarm\": %d,\"lmSpeed\": %d,\"rmSpeed\": %d,\"bTemp\": %d,\"bLevel\": %d,\"gMode\": %d,\"cMode\": %d,\"acc_x"\:%f,\"acc_y"\:%f,\"acc_z"\:%f}";
-	//char json1[] = "{\"lmTorque\":%d,\"rmTorque\":%d,\"batVol\": %d,\"carDistce\": %d,\"mcu1Temp\": %d,\"mcu2Temp\": %d,\"brakeTravel\": %d,\"lmoTemp\": %d,\"rmoTemp\": %d,\"LbatAlr"\:&d,\"angle"\:&d}";
-	char json0[] = "{1,%d,%d,%d,%d,%d,%d,%d,%d,%d,%f,%f,%f}";
-	char json1[] = "{2,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d}";
+	//char json0[] = "{\"cSpeed\": %d,\"Pos\": %d,\"bAlarm\": %d,\"lmSpeed\": %d,\"rmSpeed\": %d,\"bTemp\": %d,\"bLevel\": %d,\"gMode\": %d,\"cMode\": %d}";
+	//char json1[] = "{\"lmTorque\":%d,\"rmTorque\":%d,\"batVol\": %d,\"carDistce\": %d,\"mcu1Temp\": %d,\"mcu2Temp\": %d,\"brakeTravel\": %d,\"lmoTemp\": %d,\"rmoTemp\": %d}";
+	char json0[] = "{1,%d,%d,%d,%d,%d,%d,%d,%d,%d}";
+	char json1[] = "{2,%d,%d,%d,%d,%d,%d,%d,%d,%d}";
 	char t_json[300];
 	if(!changeFlag)
 	{
@@ -157,10 +157,7 @@ void jsonPack(void)//json打包 分段 heap太小一次性打包不下
 		racingCarData.batTemp, \
 		racingCarData.batLevel, \
 		racingCarData.gearMode, \
-		racingCarData.carMode,
-		racingCarData.acc_x,
-		racingCarData.acc_y,
-		racingCarData.acc_z);
+		racingCarData.carMode);
 		
 		changeFlag = 1;
 	}
@@ -175,10 +172,7 @@ void jsonPack(void)//json打包 分段 heap太小一次性打包不下
 		racingCarData.mcu2Temp, \
 		racingCarData.brakeTravel, \
 		racingCarData.lmotorTemp, \
-		racingCarData.rmotorTemp,
-		racingCarData.LbatAlr,
-		racingCarData.angle,
-		ACC_X);
+		racingCarData.rmotorTemp);
 		
 		changeFlag = 0;
 	}

@@ -20,9 +20,6 @@ extern uint8_t QMTOPEN_Flag;
 extern uint8_t QMTCONN_Flag;
 extern uint8_t QMTCFG_Flag;
 
-extern int16_t ACC_X;
-extern int16_t ACC_Y;
-extern int16_t ACC_Z;
 
 struct RacingCarData{
 	//ID:0X211
@@ -40,7 +37,6 @@ struct RacingCarData{
 	uint16_t batVol;              //电池电压  0-900
 	uint8_t gearMode;            //挡位信息  1Bit
 	uint8_t carMode;             //车辆运行模式  1Bit 1:转矩模式 2：速度模式
-	uint8_t LbatAlr;			//低压电池报警位 0-1
 
 	//ID:0X212
 	uint16_t lmotorSpeed;         //左电机转速  2Bit offset -10000rpm 分辨率:0.5
@@ -48,13 +44,7 @@ struct RacingCarData{
 	uint8_t mcu1Temp;            //电机控制器1温度 1Byte 0~150摄氏度 offset:-50
 	uint16_t rmotorSpeed;         //右电机转速  2Bit offset -10000rpm 分辨率:0.5
 	uint8_t rmotorTemp;          //右电机温度
-	uint8_t mcu2Temp;  
-		
-	//ID:0x204
-	float acc_x;
-	float acc_y;
-	float acc_z;
-	uint8_t angle;
+	uint8_t mcu2Temp;   
 };
 
 extern struct RacingCarData racingCarData;

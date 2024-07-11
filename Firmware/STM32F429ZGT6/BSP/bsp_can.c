@@ -3,6 +3,7 @@
 
 extern osEventFlagsId_t Upld_data_eventHandle;
 uint32_t CAN_MailBox0;
+uint8_t data[8] = {1,2,3,4,5,6,7,8};
 
 void CanFilter_Config()
 {
@@ -11,14 +12,10 @@ void CanFilter_Config()
 	Can_FilterStructure.FilterBank = 10;
 	Can_FilterStructure.FilterMode = CAN_FILTERMODE_IDMASK;
 	Can_FilterStructure.FilterScale = CAN_FILTERSCALE_32BIT;
-	Can_FilterStructure.FilterIdHigh = 0x000 << 5;			//32位下，存储要过滤ID的高16位
-    Can_FilterStructure.FilterIdLow = 0x0000;					//32位下，存储要过滤ID的低16位
-    Can_FilterStructure.FilterMaskIdHigh = 0x0000;			//掩码模式下，存储的是掩码
-    Can_FilterStructure.FilterMaskIdLow = 0x0000;
-    //Can_FilterStructure.FilterIdHigh = (0x210 << 3)>>16;			//32位下，存储要过滤ID的高16位
-    //Can_FilterStructure.FilterIdLow = (0x210<<3)|(0x01<<2)|(0x00<<1);					//32位下，存储要过滤ID的低16位
-    //Can_FilterStructure.FilterMaskIdHigh = (0xFFC<<3)>>16;			//掩码模式下，存储的是掩码
-    //Can_FilterStructure.FilterMaskIdLow = (0xFFC<<3)|(0x01<<2)|(0x01<<1);
+    Can_FilterStructure.FilterIdHigh = (0x210 << 3)>>16;			//32位下，存储要过滤ID的高16位
+    Can_FilterStructure.FilterIdLow = (0x210<<3)|(0x01<<2)|(0x00<<1);					//32位下，存储要过滤ID的低16位
+    Can_FilterStructure.FilterMaskIdHigh = (0xFFC<<3)>>16;			//掩码模式下，存储的是掩码
+    Can_FilterStructure.FilterMaskIdLow = (0xFFC<<3)|(0x01<<2)|(0x01<<1);
 	Can_FilterStructure.FilterFIFOAssignment = 0;       //储存在哪一个fifo
 	Can_FilterStructure.FilterActivation = ENABLE; //激活can
 	Can_FilterStructure.SlaveStartFilterBank = 0;

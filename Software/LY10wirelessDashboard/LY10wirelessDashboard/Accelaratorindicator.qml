@@ -4,11 +4,9 @@ Item {
     id:accelarate
     width: 180
     height: 180
-
-    property int aCC_X : 0
-    property int aCC_Y : 0
-    property int aCC_Z : 0
-
+    property int acc_x: 0
+    property int acc_y: 0
+    property int acc_z: 0
     Rectangle{
         id:accelaratedash
         width: parent.width
@@ -56,7 +54,7 @@ Item {
         id:indicator
         width: 9
         height: width
-        x:-10-width/2+aCC_X/20*100; y:-10-height/2+aCC_Y/20*100
+        x:90-width/2+acc_x; y:90-height/2+acc_y
         color:"red"
         radius: width/2
         opacity: 0.8
@@ -95,7 +93,7 @@ Item {
 
     Item {
         id:acczindicator
-        x:240; y:aCC_Z/20*(parent.height-30)+10; z:1
+        x:240; y:parent.height/10*parent.acc_z+10;z:1
         width: acczbash.width
         Rectangle{
             id:acczcircle

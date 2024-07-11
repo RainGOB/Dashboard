@@ -7,9 +7,7 @@
 #define  NUM_OF_TEETH 20.0    //码盘齿数
 
 uint8_t upSpeedFlag = 1;
-uint8_t batlevelFlag = 1;
 uint8_t uploadFlag = 1;
-uint8_t accFlag = 1;
 struct RacingCarData racingCarData;
 uint32_t CAN_TX_BOX1;
 
@@ -141,21 +139,20 @@ void carDataUpdate()//模拟汽车跑动数据
 	racingCarData.gearMode = 2; //0:空挡  1:倒挡 2：前进挡
 	racingCarData.carMode = 2;//速度模式
 	racingCarData.batTemp = 40;//电池温度 40摄氏度
+	racingCarData.batLevel = 100;//动力电池电量 100%
 	racingCarData.batVol = 450;//动力电池电压450V
 	racingCarData.batAlarm = 0;//无告警
-
+	
 	//ID:0X191
 	if(upSpeedFlag)
 	{
-		racingCarData.lmotorSpeed+=100;         //左电机转速  2Bit offset -10000rpm 分辨率:0.5	
-		racingCarData.angle += 4;
+		racingCarData.lmotorSpeed+=100;         //左电机转速  2Bit offset -10000rpm 分辨率:0.5
 		if(racingCarData.lmotorSpeed == 5500)
 			upSpeedFlag = 0;
 	}
 	else
 	{
 		racingCarData.lmotorSpeed-=100;
-		racingCarData.angle -= 4;
 		if(racingCarData.lmotorSpeed == 0)
 			upSpeedFlag = 1;
 	}
@@ -177,7 +174,6 @@ void carDataUpdate()//模拟汽车跑动数据
 		racingCarData.r_motor_torque = racingCarData.l_motor_torque;
 		racingCarData.PedalTravel = 100; //油门踏板开度为100 踩死
 		racingCarData.brakeTravel = 0;
-		racingCarData.LbatAlr = 0;
 	}
 		
 	else
@@ -186,38 +182,7 @@ void carDataUpdate()//模拟汽车跑动数据
 		racingCarData.r_motor_torque = racingCarData.l_motor_torque;
 		racingCarData.PedalTravel =0;
 		racingCarData.brakeTravel = 40;
-		racingCarData.LbatAlr = 1;
 	}
-	
-	if(batlevelFlag)
-	{
-		racingCarData.batLevel += 1;
-		if(racingCarData.batLevel >= 90)
-			batlevelFlag = 0;
-	}
-	else
-	{
-		racingCarData.batLevel -= 1;
-
-		if(racingCarData.batLevel <= 10)
-			batlevelFlag = 1;
-	}
-	
-	if(accFlag){
-		racingCarData.acc_x += 0x10;
-		racingCarData.acc_y += 0x10;
-		racingCarData.acc_z += 0x10;
-		if(racingCarData.acc_x >= 0xB000)
-			accFlag = 0;
-	}
-	else{
-		racingCarData.acc_x -= 0x10;
-		racingCarData.acc_y -= 0x10;
-		racingCarData.acc_z -= 0x10;
-		if(racingCarData.acc_x <= 5000)
-			accFlag = 1;
-	}
-	
 	racingCarData.carTravel+=5;
 	
 	//ID:0X192
@@ -258,7 +223,6 @@ void canDataPack()
 	carData[6] = racingCarData.carMode;//车辆运行模式  1Bit 1:转矩模式 2：速度模式
 	carData[4] = racingCarData.batVol * 10 % 256;//电池电压  0-900 Resolution = 0.1 LSB在后八位
 	carData[3] = racingCarData.batVol * 10 >> 8;
-	carData[7] = racingCarData.LbatAlr;
 	CAN1_Send(0X213, carData);
 	memset(carData,0x00,sizeof(carData)); //清空数组
 	
@@ -272,18 +236,6 @@ void canDataPack()
 	carData[6] = racingCarData.r_motor_torque % 256;
 	carData[7] = racingCarData.r_motor_torque >> 8;
 	CAN1_Send(0X211, carData);
-	memset(carData,0x00,sizeof(carData)); //清空数组
-	
-	HAL_Delay(200);
-	//ID:0x214
-	carData[0] = (int)(racingCarData.acc_x) % 256;   //加速度XLSB
-	carData[1] = (int)(racingCarData.acc_x) >> 8;	  //加速度XMSB
-	carData[2] = (int)(racingCarData.acc_y) % 256;   //加速度YLSB
-	carData[3] = (int)(racingCarData.acc_y) >> 8;    //加速度XMSB
-	carData[4] = (int)(racingCarData.acc_z) % 256;   //加速度ZLSB
-	carData[5] = (int)(racingCarData.acc_z) >> 8;    //加速度ZMSB
-	carData[6] = racingCarData.angle;
-	CAN1_Send(0x214, carData);
 	memset(carData,0x00,sizeof(carData)); //清空数组
 	memset(carData,0x00,sizeof(carData)); //清空数组
 }

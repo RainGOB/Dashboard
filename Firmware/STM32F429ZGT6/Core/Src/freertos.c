@@ -55,7 +55,7 @@
 osThreadId_t ec20Handle;
 const osThreadAttr_t ec20_attributes = {
   .name = "ec20",
-  .stack_size = 512 * 8,
+  .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityRealtime,
 };
 /* Definitions for lvgl_meter */
@@ -180,7 +180,6 @@ void entry_ec20(void *argument)
 	
 	  if(MQTTClient_RdyFlag)
 		Iot_uploadHandle = osThreadNew(entry_Iot_upload, NULL, &Iot_upload_attributes);
-		lv_event_send(ui_internet,MQTT_INIT_OK,NULL);
 	  osDelay(500);
 	  if(PUBOK_Flag == 1){
 		  osThreadSuspend(ec20Handle);
@@ -226,18 +225,6 @@ void entry_lvgl_meter(void *argument)
 		  lv_arc_set_value(ui_speed_arc,racingCarData.FrontSpeed);
 		  lv_arc_set_value(ui_Arc2,racingCarData.lmotorSpeed);
 		  lv_arc_set_value(ui_Arc3,racingCarData.rmotorSpeed);
-		  
-		  if(racingCarData.LbatAlr == 0)
-			  lv_obj_set_x(ui_battery, 290);
-		  else
-			  lv_obj_set_x(ui_battery, 500);
-		  
-		  if(racingCarData.batLevel <= 30)
-			  lv_obj_set_x(ui_Hbattery_allert, 350);
-		  else
-			  lv_obj_set_x(ui_Hbattery_allert, 500);
-
-		  
 		  if(racingCarData.gearMode == 1){
 			  lv_obj_set_style_text_color(ui_gear, lv_color_hex(0x32C832), LV_PART_MAIN | LV_STATE_DEFAULT);
 			  lv_label_set_text(ui_gear, "C");}
@@ -323,3 +310,4 @@ void entry_Iot_upload(void *argument)
 /* USER CODE BEGIN Application */
 
 /* USER CODE END Application */
+

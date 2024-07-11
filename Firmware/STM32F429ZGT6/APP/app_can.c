@@ -1,5 +1,5 @@
 #include "APP_CAN.h"
-#include "ui.h"
+
 
 void decode(uint32_t ID,uint8_t *canData){
 	switch(ID){
@@ -28,17 +28,8 @@ void decode(uint32_t ID,uint8_t *canData){
 			racingCarData.batVol = (canData[3] + canData[4] * 256) / 10;
 			racingCarData.gearMode = canData[5];
 			racingCarData.carMode = canData[6];
-			racingCarData.LbatAlr = canData[7];
+			data[4] = canData[4];
 			break;	
-		
-		case 0x214:
-			ACC_X = canData[0] + canData[1] * 256;
-			ACC_Y = canData[2] + canData[3] * 256;
-			ACC_Z = canData[4] + canData[5] * 256;
-			racingCarData.acc_x = ((float)ACC_X / 32768.0f) * 16.0f;
-			racingCarData.acc_y = ((float)ACC_Y / 32768.0f) * 16.0f;
-		    racingCarData.acc_z = ((float)ACC_Z / 32768.0f) * 16.0f;
-		    racingCarData.angle = canData[6];
-			break;
+
 	}
 }

@@ -66,6 +66,7 @@ void ui_Screen1_screen_init(void)
     lv_obj_set_style_bg_opa(ui_Slider2, 0, LV_PART_KNOB | LV_STATE_DEFAULT);
 
 	SLIDER_LOAD_OVER = lv_event_register_id();
+
     lv_obj_add_event_cb(ui_Slider2, ui_event_Slider2, LV_EVENT_ALL, NULL);
 
 }

@@ -15,10 +15,6 @@ uint8_t QMTOPEN_Flag = 0;
 uint8_t QMTCONN_Flag = 0;
 uint8_t QMTCFG_Flag = 0;
 
-int16_t ACC_X;
-int16_t ACC_Y;
-int16_t ACC_Z;
-
 
 struct RacingCarData racingCarData;
 

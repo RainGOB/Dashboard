@@ -78,11 +78,9 @@ LV_FONT_DECLARE(ui_font_PoetsenOne40);
 extern uint8_t barFlag;
 
 extern uint32_t SLIDER_LOAD_OVER;
-extern uint32_t MQTT_INIT_OK;
 
 void ui_init(void);
 void sendEventCode();
-void ui_event_internet_icon(lv_event_t * e);
 
 #ifdef __cplusplus
 } /*extern "C"*/

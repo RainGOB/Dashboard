@@ -25,10 +25,6 @@ void QmlMqttClient::parse(QByteArray package)
     QString message = QString(package);
     message = message.mid(0,message.size() );
 
-    //取消大括号
-    if(message.size()>=2 && message.front() == '{' && message.back() == '}'){
-        message = message.mid(1,message.size() - 2);
-    }
     //分割字符串用逗号为分隔符
     QStringList packageStr = message.split(',');
     qDebug()<<packageStr;
@@ -43,9 +39,6 @@ void QmlMqttClient::parse(QByteArray package)
         setBatLevel(packageStr[7].toInt());
         setGearMode(packageStr[8].toInt());
         setCarMode(packageStr[9].toInt());
-        setAcc_x(packageStr[10].toFloat());
-        setAcc_y(packageStr[11].toFloat());
-        setAcc_z(packageStr[12].toFloat());
     }
     else
     {
@@ -58,8 +51,6 @@ void QmlMqttClient::parse(QByteArray package)
         setBrakeTravel(packageStr[7].toInt());
         setLmotorTemp(packageStr[8].toInt());
         setRmotorTemp(packageStr[9].toInt());
-        setLbatAlr(packageStr[10].toInt());
-        setAngle(packageStr[11].toInt());
     }
 }
 
