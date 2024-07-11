@@ -1,0 +1,9 @@
+stm32f429zgt6\qrcodegen.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\libs\qrcode\qrcodegen.c
+stm32f429zgt6\qrcodegen.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+stm32f429zgt6\qrcodegen.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+stm32f429zgt6\qrcodegen.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+stm32f429zgt6\qrcodegen.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+stm32f429zgt6\qrcodegen.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\libs\qrcode\qrcodegen.h
+stm32f429zgt6\qrcodegen.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+stm32f429zgt6\qrcodegen.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+stm32f429zgt6\qrcodegen.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

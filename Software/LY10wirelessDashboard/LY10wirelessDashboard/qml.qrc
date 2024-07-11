@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Message.qml</file>
+        <file>big-numbers.ttf</file>
+        <file>Cinzel-Regular.ttf</file>
+        <file>Cookie-Regular.ttf</file>
+        <file>FasterOne-Regular.ttf</file>
+        <file>lingyun.ico</file>
+        <file>lingyun.png</file>
+        <file>Lobster-Regular.ttf</file>
+        <file>TTZhiHeiJ-W4.ttf</file>
+        <file>1.jpg</file>
+        <file>CircelBar.qml</file>
+        <file>SpeedNeedle.qml</file>
+        <file>Anglesensor.qml</file>
+        <file>Accelaratorindicator.qml</file>
+    </qresource>
+</RCC>
