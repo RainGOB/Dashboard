@@ -56,6 +56,10 @@ class QmlMqttClient : public QMqttClient
     Q_PROPERTY(unsigned int lmotortorq READ lmotortorq WRITE setLmotortorq NOTIFY lmotortorqChanged)
     Q_PROPERTY(unsigned int rmotortorq READ rmotortorq WRITE setRmotortorq NOTIFY rmotortorqChanged)
     Q_PROPERTY(unsigned int angle READ angle WRITE setAngle NOTIFY angleChanged)
+    Q_PROPERTY(unsigned int LbatAlr READ LbatAlr WRITE setLbatAlr NOTIFY LbatAlrChanged)
+    Q_PROPERTY(float acc_x READ acc_x WRITE setAcc_x NOTIFY acc_xChanged)
+    Q_PROPERTY(float acc_y READ acc_y WRITE setAcc_y NOTIFY acc_yChanged)
+    Q_PROPERTY(float acc_z READ acc_z WRITE setAcc_z NOTIFY acc_zChanged)
     Q_PROPERTY(QMqttClient::ClientState state READ state WRITE setState NOTIFY stateChanged)
 public:
     QmlMqttClient(QObject *parent = nullptr);
@@ -124,6 +128,22 @@ public:
 
     unsigned int angle(){
         return m_angle;
+    }
+
+    unsigned int LbatAlr(){
+        return m_LbatAlr;
+    }
+
+    float acc_x(){
+        return m_acc_x;
+    }
+
+    float acc_y(){
+        return m_acc_y;
+    }
+
+    float acc_z(){
+        return m_acc_z;
     }
 
     void setCarSpeed(const unsigned int &carSpeed) {
@@ -241,7 +261,30 @@ public:
             emit angleChanged();
         }
     }
-
+    void setLbatAlr(const unsigned int &LbatAlr){
+        if(LbatAlr!=m_LbatAlr){
+            m_LbatAlr = LbatAlr;
+            emit LbatAlrChanged();
+        }
+    }
+    void setAcc_x(const float &acc_x){
+        if(acc_x!=m_acc_x+10){
+            m_acc_x = acc_x+10;
+            emit acc_xChanged();
+        }
+    }
+    void setAcc_y(const float &acc_y){
+        if(acc_y!=m_acc_y+10){
+            m_acc_y = acc_y+10;
+            emit acc_yChanged();
+        }
+    }
+    void setAcc_z(const float  &acc_z){
+        if(acc_z!=m_acc_z+10){
+            m_acc_z = acc_z+10;
+            emit acc_zChanged();
+        }
+    }
 
     void parse(QByteArray package);
 
@@ -268,6 +311,10 @@ signals:
     void rmotortorqChanged();
     void lmotortorqChanged();
     void angleChanged();
+    void LbatAlrChanged();
+    void acc_xChanged();
+    void acc_yChanged();
+    void acc_zChanged();
 
     void stateChanged();
 public slots:
@@ -298,8 +345,11 @@ private:
     unsigned int m_lmotortorq;
     unsigned int m_rmotortorq;
     unsigned int m_angle;
+    unsigned int m_LbatAlr;
+    float m_acc_x;
+    float m_acc_y;
+    float m_acc_z;
 };
-
 
 
 #endif // QMLMQTTCLIENT_H

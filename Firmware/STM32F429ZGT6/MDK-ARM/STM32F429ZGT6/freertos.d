@@ -39,6 +39,7 @@ stm32f429zgt6\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flas
 stm32f429zgt6\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
 stm32f429zgt6\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h
 stm32f429zgt6\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h
+stm32f429zgt6\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h
 stm32f429zgt6\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h
 stm32f429zgt6\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h
 stm32f429zgt6\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
@@ -185,3 +186,4 @@ stm32f429zgt6\freertos.o: ../BSP/bsp_can.h
 stm32f429zgt6\freertos.o: ../Core/Inc/can.h
 stm32f429zgt6\freertos.o: ../APP/app_can.h
 stm32f429zgt6\freertos.o: ../BSP/bsp_can.h
+stm32f429zgt6\freertos.o: ../Core/Inc/iwdg.h

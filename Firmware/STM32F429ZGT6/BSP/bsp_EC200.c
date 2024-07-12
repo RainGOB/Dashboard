@@ -111,6 +111,17 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 					HAL_UART_Receive_IT(&huart3, (uint8_t *)&Rx_string, 1); 
 					
 				}
+				
+				//Ê§Ð§ÅÐ¶Ï
+				if(strstr((const char *)Rx_string,(const char *)"ERROR")){
+					EC200_RdyFlag = 0;
+					QMTOPEN_Flag = 0;
+					QMTCONN_Flag = 0;
+					PUBOK_Flag = 0;
+					memset(Rx_string,0x00,sizeof(Rx_string));
+					HAL_UART_Receive_IT(&huart3, (uint8_t *)&Rx_string, 1); 
+				}
+				
 				Rx_Count = 0;
 			}
 		}

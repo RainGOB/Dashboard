@@ -90,6 +90,10 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 CanFilterInit();
+racingCarData.acc_x = 0x3222;
+racingCarData.acc_y = 0x3222;
+racingCarData.acc_z = 0x3222;
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -109,7 +113,7 @@ CanFilterInit();
 			
 		#endif
 //HAL_GPIO_TogglePin(GPIOF, GPIO_PIN_6|GPIO_PIN_7);
-		HAL_Delay(500);
+		HAL_Delay(200);
   }
   /* USER CODE END 3 */
 }

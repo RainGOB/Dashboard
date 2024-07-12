@@ -8,7 +8,6 @@
 static CAN_TxHeaderTypeDef TxBuff;    //can发送消息的消息头
 static CAN_RxHeaderTypeDef RxBuff;    //can接收消息的消息头
 
-extern uint8_t data[8];
 
 void CanFilter_Config(void);
 void canfilter_init(void);

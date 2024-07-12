@@ -21,13 +21,22 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.8.0
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
-E:\project\lyracing\LY11\STM32F429ZGT6\MDK-ARM\STM32F429ZGT6.uvprojx
-Project File Date:  06/11/2024
+E:\project\lyracing\Dashboard\Firmware\STM32F429ZGT6\MDK-ARM\STM32F429ZGT6.uvprojx
+Project File Date:  07/12/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'STM32F429ZGT6'
-"STM32F429ZGT6\STM32F429ZGT6.axf" - 0 Error(s), 0 Warning(s).
+compiling freertos.c...
+../Core/Src/freertos.c(184): warning:  #188-D: enumerated type mixed with another type
+  		lv_event_send(ui_Iot,MQTT_INIT_OK,NULL);
+../Core/Src/freertos.c(298): warning:  #550-D: variable "event_bit"  was set but never used
+  	uint32_t event_bit;
+../Core/Src/freertos.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=168192 RO-data=493648 RW-data=888 ZI-data=171224  
+FromELF: creating hex file...
+"STM32F429ZGT6\STM32F429ZGT6.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -50,7 +59,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.6.0
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>

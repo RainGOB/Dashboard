@@ -1,3 +1,4 @@
+
 #ifndef __CAN_APP_H__
 #define __CAN_APP_H__
 
@@ -7,8 +8,8 @@
 #include "usart.h"
 
 
-static CAN_TxHeaderTypeDef        TxMessage;    //CAN·¢ËÍµÄÏûÏ¢µÄÏûÏ¢Í·
-static CAN_RxHeaderTypeDef        RxMessage;    //CAN½ÓÊÕµÄÏûÏ¢µÄÏûÏ¢Í·
+static CAN_TxHeaderTypeDef        TxMessage;    //CANï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Ï¢Í·
+static CAN_RxHeaderTypeDef        RxMessage;    //CANï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Ï¢Í·
 
 void CAN1_Send(uint32_t CAN_ID, uint8_t *CAN_DATA);
 
@@ -27,34 +28,63 @@ void decodeCanData(uint32_t canID, uint8_t *canData);
 #endif
 struct RacingCarData
 {
-
+/*
 	//ID:0X193
-	uint8_t FrontSpeed;          //Ç°ÂÖ³µËÙ ÔÚÕâÀï×÷Îª²Î¿¼³µËÙ 1Byte
-	uint8_t PedalTravel;         //ÓÍÃÅÌ¤°å¿ª¶È    1Byte
-	uint8_t brakeTravel;         //É²³µÌ¤°å¿ª¶È    1Byte
-	uint8_t carTravel;           //³µÁ¾ÅÜ¶¯¾àÀë    1Byte
-	uint16_t l_motor_torque;     //×óµç»úÄ¿±ê×ª¾Ø  2Byte
-  uint16_t r_motor_torque;     //ÓÒµç»úÄ¿±ê×ª¾Ø  2Byte
+	uint8_t FrontSpeed;          //Ç°ï¿½Ö³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Î¿ï¿½ï¿½ï¿½ï¿½ï¿½ 1Byte
+	uint8_t PedalTravel;         //ï¿½ï¿½ï¿½ï¿½Ì¤ï¿½å¿ªï¿½ï¿½    1Byte
+	uint8_t brakeTravel;         //É²ï¿½ï¿½Ì¤ï¿½å¿ªï¿½ï¿½    1Byte
+	uint8_t carTravel;           //ï¿½ï¿½ï¿½ï¿½ï¿½Ü¶ï¿½ï¿½ï¿½ï¿½ï¿½    1Byte
+	uint16_t l_motor_torque;     //ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½×ªï¿½ï¿½  2Byte
+  uint16_t r_motor_torque;     //ï¿½Òµï¿½ï¿½Ä¿ï¿½ï¿½×ªï¿½ï¿½  2Byte
 
 	//ID:0X196 
-	uint8_t batAlarm;            //µç³Ø¸æ¾¯  0~4 ÎÞ¸æ¾¯£º0 Ò»¼¶¸æ¾¯£º1£¨×îÑÏÖØ£© ¶þ¼¶¸æ¾¯£º2 Èý¼¶¸æ¾¯£º3 1Byte
-	uint8_t batTemp;             //µç³ØÎÂ¶È  0-160  offset:-40  1Byte
-	uint8_t batLevel;            //µç³ØµçÁ¿  0-100  1Byte
-	uint16_t batVol;              //µç³ØµçÑ¹  0-900  2Byte
-	uint8_t gearMode;            //µ²Î»ÐÅÏ¢  1Bit   1Byte
-	uint8_t carMode;             //³µÁ¾ÔËÐÐÄ£Ê½  1Bit
+	uint8_t batAlarm;            //ï¿½ï¿½Ø¸æ¾¯  0~4 ï¿½Þ¸æ¾¯ï¿½ï¿½0 Ò»ï¿½ï¿½ï¿½æ¾¯ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½æ¾¯ï¿½ï¿½2 ï¿½ï¿½ï¿½ï¿½ï¿½æ¾¯ï¿½ï¿½3 1Byte
+	uint8_t batTemp;             //ï¿½ï¿½ï¿½ï¿½Â¶ï¿½  0-160  offset:-40  1Byte
+	uint8_t batLevel;            //ï¿½ï¿½Øµï¿½ï¿½ï¿½  0-100  1Byte
+	uint16_t batVol;              //ï¿½ï¿½Øµï¿½Ñ¹  0-900  2Byte
+	uint8_t gearMode;            //ï¿½ï¿½Î»ï¿½ï¿½Ï¢  1Bit   1Byte
+	uint8_t carMode;             //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½  1Bit
 	//ID:0X191
-	uint16_t lmotorSpeed;         //×óµç»ú×ªËÙ  2Bit offset -10000rpm ·Ö±æÂÊ:0.5
+	uint16_t lmotorSpeed;         //ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½  2Bit offset -10000rpm ï¿½Ö±ï¿½ï¿½ï¿½:0.5
 	//ID:0X192
-	uint8_t lmotorTemp;          //×óµç»úÎÂ¶È   1Byte 0~150ÉãÊÏ¶È offset:-50
-	uint8_t mcu1Temp;            //µç»ú¿ØÖÆÆ÷1ÎÂ¶È 1Byte 0~150ÉãÊÏ¶È offset:-50
+	uint8_t lmotorTemp;          //ï¿½ï¿½ï¿½ï¿½ï¿½Â¶ï¿½   1Byte 0~150ï¿½ï¿½ï¿½Ï¶ï¿½ offset:-50
+	uint8_t mcu1Temp;            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½Â¶ï¿½ 1Byte 0~150ï¿½ï¿½ï¿½Ï¶ï¿½ offset:-50
 	//ID:0X194	
-	uint16_t rmotorSpeed;         //ÓÒµç»ú×ªËÙ  2Bit offset -10000rpm ·Ö±æÂÊ:0.5
+	uint16_t rmotorSpeed;         //ï¿½Òµï¿½ï¿½×ªï¿½ï¿½  2Bit offset -10000rpm ï¿½Ö±ï¿½ï¿½ï¿½:0.5
 	//ID:0X195
-	uint8_t rmotorTemp;          //ÓÒµç»úÎÂ¶È
-	uint8_t mcu2Temp;            //µç»ú¿ØÖÆÆ÷2ÎÂ¶È
+	uint8_t rmotorTemp;          //ï¿½Òµï¿½ï¿½ï¿½Â¶ï¿½
+	uint8_t mcu2Temp;            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2ï¿½Â¶ï¿½
+	*/
+		//ID:0X211
+	uint8_t FrontSpeed;          //Ç°ï¿½Ö³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Î¿ï¿½ï¿½ï¿½ï¿½ï¿½ 1Byte
+	uint8_t PedalTravel;         //ï¿½ï¿½ï¿½ï¿½Ì¤ï¿½å¿ªï¿½ï¿½    1Byte
+	uint8_t brakeTravel;         //É²ï¿½ï¿½Ì¤ï¿½å¿ªï¿½ï¿½    1Byte
+	uint8_t carTravel;           //ï¿½ï¿½ï¿½ï¿½ï¿½Ü¶ï¿½ï¿½ï¿½ï¿½ï¿½    1Byte
+	uint16_t l_motor_torque;      //ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½×ªï¿½ï¿½  2Byte
+	uint16_t r_motor_torque;      //ï¿½Òµï¿½ï¿½Ä¿ï¿½ï¿½×ªï¿½ï¿½  2Byte
+
+	//ID:0X213
+	uint8_t batAlarm;            //ï¿½ï¿½Ø¸æ¾¯  0~4 ï¿½Þ¸æ¾¯ï¿½ï¿½0 Ò»ï¿½ï¿½ï¿½æ¾¯ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½æ¾¯ï¿½ï¿½2 ï¿½ï¿½ï¿½ï¿½ï¿½æ¾¯ï¿½ï¿½3
+	uint8_t batTemp;               //ï¿½ï¿½ï¿½ï¿½Â¶ï¿½  0-160  offset:-40
+	uint8_t batLevel;            //ï¿½ï¿½Øµï¿½ï¿½ï¿½  0-100
+	uint16_t batVol;              //ï¿½ï¿½Øµï¿½Ñ¹  0-900
+	uint8_t gearMode;            //ï¿½ï¿½Î»ï¿½ï¿½Ï¢  1Bit
+	uint8_t carMode;             //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½  1Bit 1:×ªï¿½ï¿½Ä£Ê½ 2ï¿½ï¿½ï¿½Ù¶ï¿½Ä£Ê½
+	uint8_t LbatAlr;			//ï¿½ï¿½Ñ¹ï¿½ï¿½Ø±ï¿½ï¿½ï¿½Î» 0-1
+
+	//ID:0X212
+	uint16_t lmotorSpeed;         //ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½  2Bit offset -10000rpm ï¿½Ö±ï¿½ï¿½ï¿½:0.5
+	uint8_t lmotorTemp;          //ï¿½ï¿½ï¿½ï¿½ï¿½Â¶ï¿½   1Byte 0~150ï¿½ï¿½ï¿½Ï¶ï¿½ offset:-50
+	uint8_t mcu1Temp;            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½Â¶ï¿½ 1Byte 0~150ï¿½ï¿½ï¿½Ï¶ï¿½ offset:-50
+	uint16_t rmotorSpeed;         //ï¿½Òµï¿½ï¿½×ªï¿½ï¿½  2Bit offset -10000rpm ï¿½Ö±ï¿½ï¿½ï¿½:0.5
+	uint8_t rmotorTemp;          //ï¿½Òµï¿½ï¿½ï¿½Â¶ï¿½
+	uint8_t mcu2Temp;   
 	
-	
+	//ID:0x204
+	uint16_t acc_x;            //ï¿½ï¿½ï¿½Ù¶ï¿½X
+	uint16_t acc_y;			   //ï¿½ï¿½ï¿½Ù¶ï¿½y
+	uint16_t acc_z;			   //ï¿½ï¿½ï¿½Ù¶ï¿½z
+	uint8_t angle;
 };
 extern struct RacingCarData racingCarData;
 extern uint8_t uploadFlag;

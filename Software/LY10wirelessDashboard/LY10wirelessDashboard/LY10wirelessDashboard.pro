@@ -4,6 +4,8 @@ QT       += quick
 
 QT       += core gui network mqtt
 
+QT       += axcontainer
+
 ICON += lingyun.ico
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets

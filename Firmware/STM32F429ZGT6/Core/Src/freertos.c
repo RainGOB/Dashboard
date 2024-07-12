@@ -30,6 +30,7 @@
 #include "ui.h"
 #include "bsp_can.h"
 #include "app_EC200.h"
+#include "iwdg.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -55,7 +56,7 @@
 osThreadId_t ec20Handle;
 const osThreadAttr_t ec20_attributes = {
   .name = "ec20",
-  .stack_size = 512 * 4,
+  .stack_size = 512 * 8,
   .priority = (osPriority_t) osPriorityRealtime,
 };
 /* Definitions for lvgl_meter */
@@ -180,6 +181,7 @@ void entry_ec20(void *argument)
 	
 	  if(MQTTClient_RdyFlag)
 		Iot_uploadHandle = osThreadNew(entry_Iot_upload, NULL, &Iot_upload_attributes);
+		lv_event_send(ui_Iot,MQTT_INIT_OK,NULL);
 	  osDelay(500);
 	  if(PUBOK_Flag == 1){
 		  osThreadSuspend(ec20Handle);
@@ -212,19 +214,29 @@ void entry_lvgl_meter(void *argument)
                           osWaitForever); 
 	  if(event_bit){
 		  
-	      lv_label_set_text_fmt(ui_speed_num, "%03d", racingCarData.FrontSpeed);
-		  lv_label_set_text_fmt(ui_LRPM, "%04d", racingCarData.lmotorSpeed);
-		  lv_label_set_text_fmt(ui_RRPM, "%03d", racingCarData.rmotorSpeed);
-		  lv_label_set_text_fmt(ui_LmotorTem, "%02d", racingCarData.lmotorTemp);
-		  lv_label_set_text_fmt(ui_RmotorTem, "%02d", racingCarData.rmotorTemp);
-		  lv_label_set_text_fmt(ui_LmcuTem,"%02d",racingCarData.mcu1Temp);
-		  lv_label_set_text_fmt(ui_RmcuTem,"%02d",racingCarData.mcu2Temp);
-		  lv_label_set_text_fmt(ui_power_battery_Label,"%d%%",racingCarData.batLevel);
+	      lv_label_set_text_fmt(ui_SPEED, "%02d", racingCarData.FrontSpeed);
+		  lv_label_set_text_fmt(ui_L_RPM, "%04d", racingCarData.lmotorSpeed);
+		  lv_label_set_text_fmt(ui_R_RPM, "%04d", racingCarData.rmotorSpeed);
+		  lv_label_set_text_fmt(ui_L_Mot_Tem, "%02d", racingCarData.lmotorTemp);
+		  lv_label_set_text_fmt(ui_R_Mot_Tem, "%02d", racingCarData.rmotorTemp);
+		  lv_label_set_text_fmt(ui_L_MCU_Tem,"%02d",racingCarData.mcu1Temp);
+		  lv_label_set_text_fmt(ui_R_MCU_Tem,"%02d",racingCarData.mcu2Temp);
+		  lv_label_set_text_fmt(ui_SOC,"%d%%",racingCarData.batLevel);
 	  
-		  lv_slider_set_value(ui_power_battery_Slider,racingCarData.batLevel,LV_ANIM_ON);
-		  lv_arc_set_value(ui_speed_arc,racingCarData.FrontSpeed);
-		  lv_arc_set_value(ui_Arc2,racingCarData.lmotorSpeed);
-		  lv_arc_set_value(ui_Arc3,racingCarData.rmotorSpeed);
+		  lv_slider_set_value(ui_SliderSOC,racingCarData.batLevel,LV_ANIM_ON);
+		  lv_slider_set_value(ui_Sliderspeed,racingCarData.FrontSpeed,LV_ANIM_ON);
+		  
+		  if(racingCarData.LbatAlr == 0)
+			  lv_obj_set_x(ui_L_Battery_Alr, -300);
+		  else
+			  lv_obj_set_x(ui_L_Battery_Alr, 500);
+		  
+		  if(racingCarData.batLevel <= 30)
+			  lv_obj_set_style_text_color(ui_SOC,lv_color_hex(0xDE3439), LV_PART_MAIN | LV_STATE_DEFAULT);
+		  else
+			  lv_obj_set_style_text_color(ui_SOC,lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
+
+		  /*
 		  if(racingCarData.gearMode == 1){
 			  lv_obj_set_style_text_color(ui_gear, lv_color_hex(0x32C832), LV_PART_MAIN | LV_STATE_DEFAULT);
 			  lv_label_set_text(ui_gear, "C");}
@@ -235,6 +247,7 @@ void entry_lvgl_meter(void *argument)
 			  else{
 				  lv_obj_set_style_text_color(ui_gear, lv_color_hex(0xF6550E), LV_PART_MAIN | LV_STATE_DEFAULT);
 				  lv_label_set_text(ui_gear, "S");}
+		  */
 	 }
 	  osMutexRelease(lvgl_mutexHandle);
   }
@@ -251,6 +264,7 @@ void entry_lvgl_meter(void *argument)
 void entry_lvgl(void *argument)
 {
   /* USER CODE BEGIN entry_lvgl */
+	MX_IWDG_Init();
   /* Infinite loop */
   for(;;)
   {
@@ -261,8 +275,11 @@ void entry_lvgl(void *argument)
 			sendEventCode();	
 		}
 	  lv_task_handler();
+		
+	  HAL_IWDG_Refresh(&hiwdg);
+		
 	  osMutexRelease(lvgl_mutexHandle);
-	  
+		
 	  osDelay(1);
   }
   /* USER CODE END entry_lvgl */
@@ -310,4 +327,3 @@ void entry_Iot_upload(void *argument)
 /* USER CODE BEGIN Application */
 
 /* USER CODE END Application */
-

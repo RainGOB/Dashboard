@@ -445,6 +445,11 @@
               <FilePath>../Core/Src/usart.c</FilePath>
             </File>
             <File>
+              <FileName>iwdg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\iwdg.c</FilePath>
+            </File>
+            <File>
               <FileName>stm32f4xx_it.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f4xx_it.c</FilePath>
@@ -583,6 +588,11 @@
               <FileName>stm32f4xx_hal_uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_hal_iwdg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_iwdg.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1550,34 +1560,69 @@
               <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\ui_helpers.c</FilePath>
             </File>
             <File>
-              <FileName>ui_Screen1.c</FileName>
+              <FileName>ui_main_sreen.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\screens\ui_Screen1.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\screens\ui_main_sreen.c</FilePath>
             </File>
             <File>
-              <FileName>ui_Screen2.c</FileName>
+              <FileName>ui_startup.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\screens\ui_Screen2.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\screens\ui_startup.c</FilePath>
             </File>
             <File>
-              <FileName>ui_img_battery_allert_png.c</FileName>
+              <FileName>ui_img_2095113354.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\images\ui_img_battery_allert_png.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\images\ui_img_2095113354.c</FilePath>
             </File>
             <File>
-              <FileName>ui_img_battery_png.c</FileName>
+              <FileName>ui_img_group_4_png.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\images\ui_img_battery_png.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\images\ui_img_group_4_png.c</FilePath>
             </File>
             <File>
-              <FileName>ui_img_h_battery_png.c</FileName>
+              <FileName>ui_img_group_5_png.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\images\ui_img_h_battery_png.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\images\ui_img_group_5_png.c</FilePath>
             </File>
             <File>
-              <FileName>ui_img_internet_network_png.c</FileName>
+              <FileName>ui_img_guage_bg_png.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\images\ui_img_internet_network_png.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\images\ui_img_guage_bg_png.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui_img_iot_png.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\images\ui_img_iot_png.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui_img_line1_png.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\images\ui_img_line1_png.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui_img_line2_png.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\images\ui_img_line2_png.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui_img_line3_png.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\images\ui_img_line3_png.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui_img_line4_png.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\images\ui_img_line4_png.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui_img_line5_png.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\images\ui_img_line5_png.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui_img_line6_png.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\images\ui_img_line6_png.c</FilePath>
             </File>
             <File>
               <FileName>ui_img_ly_icon_png.c</FileName>
@@ -1585,39 +1630,24 @@
               <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\images\ui_img_ly_icon_png.c</FilePath>
             </File>
             <File>
-              <FileName>ui_font_fasterone20.c</FileName>
+              <FileName>ui_font_Anton_75_bpp4.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\fonts\ui_font_fasterone20.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\fonts\ui_font_Anton_75_bpp4.c</FilePath>
             </File>
             <File>
-              <FileName>ui_font_Font40s4pbpp.c</FileName>
+              <FileName>ui_font_Anton_bpp4_35.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\fonts\ui_font_Font40s4pbpp.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\fonts\ui_font_Anton_bpp4_35.c</FilePath>
             </File>
             <File>
-              <FileName>ui_font_jersey30.c</FileName>
+              <FileName>ui_font_Anton_bpp4_40.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\fonts\ui_font_jersey30.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\fonts\ui_font_Anton_bpp4_40.c</FilePath>
             </File>
             <File>
-              <FileName>ui_font_Jersey40.c</FileName>
+              <FileName>ui_font_mashanzheng_60_bpp4.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\fonts\ui_font_Jersey40.c</FilePath>
-            </File>
-            <File>
-              <FileName>ui_font_Jersey80.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\fonts\ui_font_Jersey80.c</FilePath>
-            </File>
-            <File>
-              <FileName>ui_font_PoetsenOne20.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\fonts\ui_font_PoetsenOne20.c</FilePath>
-            </File>
-            <File>
-              <FileName>ui_font_PoetsenOne40.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\fonts\ui_font_PoetsenOne40.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\squareline\fonts\ui_font_mashanzheng_60_bpp4.c</FilePath>
             </File>
             <File>
               <FileName>ui_comp_hook.c</FileName>
