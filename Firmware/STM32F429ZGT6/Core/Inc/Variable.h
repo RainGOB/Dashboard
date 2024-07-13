@@ -11,6 +11,8 @@ extern char Rx_string[RXBUFFERSIZE];
 extern uint8_t Rx_Count;
 extern uint8_t Tx_Flag;
 extern uint8_t IRQ_JudgEnable;
+extern uint8_t CANOK_Flag;
+extern uint8_t KeyControlData[8];
 
 extern uint8_t EC200_RdyFlag;
 extern uint8_t MQTTClient_RdyFlag;

@@ -42,3 +42,13 @@ void decode(uint32_t ID,uint8_t *canData){
 			break;
 	}
 }
+
+void keyControlCanSend()
+{
+	KeyControlData[0] = 000;
+	if(HAL_GPIO_ReadPin(INPUT2_GPIO_Port, INPUT2_Pin) == RESET) KeyControlData[0] |= 0x01 << 1;
+	if(HAL_GPIO_ReadPin(INPUT3_GPIO_Port, INPUT3_Pin) == RESET) KeyControlData[0] |= 0x01 << 2;
+	if(HAL_GPIO_ReadPin(INPUT4_GPIO_Port, INPUT4_Pin) == RESET) KeyControlData[0] |= 0x01 << 3;
+	
+	CAN2_Send(0X155, KeyControlData);
+}

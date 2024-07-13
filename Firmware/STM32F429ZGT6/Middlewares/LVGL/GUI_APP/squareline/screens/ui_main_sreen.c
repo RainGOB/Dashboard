@@ -95,7 +95,7 @@ void ui_main_sreen_screen_init(void)
     lv_obj_set_x(ui_CAR_Mode, 0);
     lv_obj_set_y(ui_CAR_Mode, 15);
     lv_obj_set_align(ui_CAR_Mode, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_CAR_Mode, "Linear Accrleration");
+    lv_label_set_text(ui_CAR_Mode, "Linear Acceleration");
     lv_obj_set_style_text_color(ui_CAR_Mode, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_CAR_Mode, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui_CAR_Mode, &ui_font_Anton_bpp4_40, LV_PART_MAIN | LV_STATE_DEFAULT);

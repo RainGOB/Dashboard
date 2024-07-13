@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 13.0.2, 2024-07-11T10:50:44. -->
+<!-- Written by QtCreator 13.0.2, 2024-07-13T10:26:46. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -261,10 +261,10 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
     <value type="QString" key="PerfRecordArgsId">-e cpu-cycles --call-graph &quot;dwarf,4096&quot; -F 250</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:E:/project/lyracing/Dashboard-main/Software/LY10wirelessDashboard/LY10wirelessDashboard/LY10wirelessDashboard.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">E:/project/lyracing/Dashboard-main/Software/LY10wirelessDashboard/LY10wirelessDashboard/LY10wirelessDashboard.pro</value>
-    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">LY10wirelessDashboard3</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:E:/project/lyracing/Dashboard/Software/LY10wirelessDashboard/LY10wirelessDashboard/LY10wirelessDashboard.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">E:/project/lyracing/Dashboard/Software/LY10wirelessDashboard/LY10wirelessDashboard/LY10wirelessDashboard.pro</value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>

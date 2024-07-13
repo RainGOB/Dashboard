@@ -5,5 +5,6 @@
 #include "bsp_can.h"
 
 void decode(uint32_t ID,uint8_t *mdata);
+void keyControlCanSend(void);
 
 #endif

@@ -213,7 +213,9 @@ void entry_lvgl_meter(void *argument)
 	  osMutexWait(lvgl_mutexHandle,     /* 互斥量句柄 */ 
                           osWaitForever); 
 	  if(event_bit){
-		  
+		  if(CANOK_Flag == 1){
+			  keyControlCanSend();
+		  }
 	      lv_label_set_text_fmt(ui_SPEED, "%02d", racingCarData.FrontSpeed);
 		  lv_label_set_text_fmt(ui_L_RPM, "%04d", racingCarData.lmotorSpeed);
 		  lv_label_set_text_fmt(ui_R_RPM, "%04d", racingCarData.rmotorSpeed);
@@ -236,18 +238,24 @@ void entry_lvgl_meter(void *argument)
 		  else
 			  lv_obj_set_style_text_color(ui_SOC,lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
 
-		  /*
-		  if(racingCarData.gearMode == 1){
-			  lv_obj_set_style_text_color(ui_gear, lv_color_hex(0x32C832), LV_PART_MAIN | LV_STATE_DEFAULT);
-			  lv_label_set_text(ui_gear, "C");}
-			  else if(racingCarData.gearMode == 0){
-			      lv_obj_set_style_text_color(ui_gear, lv_color_hex(0x4195F4), LV_PART_MAIN | LV_STATE_DEFAULT);
-//				  lv_obj_set_style_text_color(ui_logoLable, lv_color_hex(0x41A0FF), LV_PART_MAIN | LV_STATE_DEFAULT);
-				  lv_label_set_text(ui_gear, "N");}
-			  else{
-				  lv_obj_set_style_text_color(ui_gear, lv_color_hex(0xF6550E), LV_PART_MAIN | LV_STATE_DEFAULT);
-				  lv_label_set_text(ui_gear, "S");}
-		  */
+		  
+		  if(racingCarData.gearMode == 0){
+			  lv_label_set_text(ui_CAR_Mode, "N");
+		  }
+		  else if(racingCarData.gearMode == 1){
+			  lv_label_set_text(ui_CAR_Mode, "ACCELERATION");
+		  }
+		  else if(racingCarData.gearMode == 2){
+			  lv_label_set_text(ui_CAR_Mode, "SKIDPAD");
+		  }
+		  else if(racingCarData.gearMode == 3){
+			  lv_label_set_text(ui_CAR_Mode,"AUTOCROSS");
+		  }
+		  else if(racingCarData.gearMode == 4){
+			  lv_label_set_text(ui_CAR_Mode,"ENDURANCE EFFICIENCY");
+		  }
+		  
+		  
 	 }
 	  osMutexRelease(lvgl_mutexHandle);
   }
@@ -299,12 +307,12 @@ void entry_Iot_upload(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  	 event_bit = osEventFlagsWait(Upld_data_eventHandle,  //等待整车数据，收不到就不运行这一任务
+	  event_bit = osEventFlagsWait(Upld_data_eventHandle,  //等待整车数据，收不到就不运行这一任务
 								GUI_UPDATE_EVENT,
 								osFlagsWaitAll,
 								osWaitForever);
-	  if(eTaskGetState(ec20Handle) == eSuspended)
-	  {
+	  if(event_bit){
+	  if(eTaskGetState(ec20Handle) == eSuspended){
 		  if(PUBOK_Flag == 1 )
 		  {
 	//	  	 if(uploadFlag)     //上车后记得解开
@@ -317,7 +325,8 @@ void entry_Iot_upload(void *argument)
 		 }
 		  else
 			 osThreadResume(ec20Handle);
-	  }	
+	  }
+	  }
 	  osDelay(100);
   }
   /* USER CODE END entry_Iot_upload */

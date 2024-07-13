@@ -40,6 +40,7 @@ void canfilter_init(){
 		Error_Handler();
 	}
 	//
+	CANOK_Flag = 1;
 	
 	if(HAL_CAN_ActivateNotification(&hcan2, CAN_IT_RX_FIFO0_MSG_PENDING) != HAL_OK){
 		//
@@ -74,7 +75,6 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan){
 		
 		if(HAL_OK == status){
 			decode(RxBuff.ExtId,mdata);
-			
 			osEventFlagsSet(Upld_data_eventHandle,0x0f);  //0000 1111  事件标志位
 		}
 	}
