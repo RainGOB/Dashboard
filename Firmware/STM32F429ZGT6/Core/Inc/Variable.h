@@ -63,4 +63,8 @@ extern struct RacingCarData racingCarData;
 
 extern uint16_t *lcd_fb;
 
+extern uint8_t TB_State;
+extern uint8_t TBSA_Flag;
+extern uint8_t TBSO_Flag;
+
 #endif

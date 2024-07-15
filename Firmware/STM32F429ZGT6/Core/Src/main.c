@@ -23,6 +23,7 @@
 #include "dma2d.h"
 #include "ltdc.h"
 #include "spi.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 #include "fmc.h"
@@ -104,7 +105,12 @@ int main(void)
   MX_SPI1_Init();
   MX_USART1_UART_Init();
   MX_USART3_UART_Init();
+  MX_TIM9_Init();
   /* USER CODE BEGIN 2 */
+  
+  //HAL_TIM_PWM_Start_IT(&htim9,TIM_CHANNEL_1);
+  //HAL_GPIO_WritePin(TB6600_DIR_GPIO_Port,TB6600_DIR_Pin,GPIO_PIN_RESET);
+  
    //HAL_TIM_Base_Start_IT(&htim7);
   SDRAM_Init();
   //rgblcd_init();   

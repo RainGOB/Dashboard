@@ -187,3 +187,5 @@ stm32f429zgt6\freertos.o: ../Core/Inc/can.h
 stm32f429zgt6\freertos.o: ../APP/app_can.h
 stm32f429zgt6\freertos.o: ../BSP/bsp_can.h
 stm32f429zgt6\freertos.o: ../Core/Inc/iwdg.h
+stm32f429zgt6\freertos.o: ../APP/app_motor.h
+stm32f429zgt6\freertos.o: ../Core/Inc/tim.h

@@ -58,6 +58,10 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define TB6600_DIR_Pin GPIO_PIN_4
+#define TB6600_DIR_GPIO_Port GPIOE
+#define TB6600_PUL_Pin GPIO_PIN_5
+#define TB6600_PUL_GPIO_Port GPIOE
 #define INPUT4_Pin GPIO_PIN_6
 #define INPUT4_GPIO_Port GPIOE
 #define INPUT3_Pin GPIO_PIN_6

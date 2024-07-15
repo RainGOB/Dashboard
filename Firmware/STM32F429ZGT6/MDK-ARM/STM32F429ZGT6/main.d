@@ -61,6 +61,7 @@ stm32f429zgt6\main.o: ../Core/Inc/can.h
 stm32f429zgt6\main.o: ../Core/Inc/dma2d.h
 stm32f429zgt6\main.o: ../Core/Inc/ltdc.h
 stm32f429zgt6\main.o: ../Core/Inc/spi.h
+stm32f429zgt6\main.o: ../Core/Inc/tim.h
 stm32f429zgt6\main.o: ../Core/Inc/gpio.h
 stm32f429zgt6\main.o: ../Core/Inc/fmc.h
 stm32f429zgt6\main.o: ../BSP/bsp_lcd.h

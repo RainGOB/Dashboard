@@ -26,3 +26,7 @@ struct RacingCarData racingCarData;
 
 uint16_t *lcd_fb;
 
+uint8_t TB_State = 0;   //1 Ç°½ø 0 ºóÍË
+uint8_t TBSA_Flag = 0;  
+uint8_t TBSO_Flag = 0;
+

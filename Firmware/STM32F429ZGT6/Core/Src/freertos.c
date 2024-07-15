@@ -31,6 +31,7 @@
 #include "bsp_can.h"
 #include "app_EC200.h"
 #include "iwdg.h"
+#include "app_motor.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -215,6 +216,7 @@ void entry_lvgl_meter(void *argument)
 	  if(event_bit){
 		  if(CANOK_Flag == 1){
 			  keyControlCanSend();
+			  TB6600_motion();
 		  }
 	      lv_label_set_text_fmt(ui_SPEED, "%02d", racingCarData.FrontSpeed);
 		  lv_label_set_text_fmt(ui_L_RPM, "%04d", racingCarData.lmotorSpeed);
