@@ -326,6 +326,8 @@ private:
     Q_DISABLE_COPY(QmlMqttClient)
     QMqttClient m_client;
 
+    QString timedata;
+
     unsigned int m_carSpeed;
     unsigned int m_batLevel;
     unsigned int m_batTemp;

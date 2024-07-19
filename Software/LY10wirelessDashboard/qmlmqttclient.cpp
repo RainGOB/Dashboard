@@ -10,8 +10,8 @@
 
 QXLSX_USE_NAMESPACE
 
-extern int hello();
-extern int attend_cell(QStringList& packStr);
+extern int hello(QString TIMEdata);
+extern int attend_cell(QStringList& packStr,QString TIMEdata);
 
 QmlMqttSubscription::QmlMqttSubscription(QMqttSubscription *s, QmlMqttClient *c)
     : sub(s)
@@ -59,7 +59,7 @@ void QmlMqttClient::parse(QByteArray package)
         setAcc_x(packageStr[10].toFloat());
         setAcc_y(packageStr[11].toFloat());
         setAcc_z(packageStr[12].toFloat());
-        attend_cell(packageStr);
+        attend_cell(packageStr,timedata);
     }
     else
     {
@@ -74,7 +74,7 @@ void QmlMqttClient::parse(QByteArray package)
         setRmotorTemp(packageStr[9].toInt());
         setLbatAlr(packageStr[10].toInt());
         setAngle(packageStr[11].toInt());
-        attend_cell(packageStr);
+        attend_cell(packageStr,timedata);
     }
 }
 
@@ -95,7 +95,8 @@ void QmlMqttClient::connectToHost()
     m_client.setUsername("lingyun");
     m_client.setPassword("lingyun666");
     m_client.connectToHost();
-    hello();
+    timedata = QDateTime::currentDateTime().toString("yyyyMMddHHmm");
+    hello(timedata);
 }
 
 void QmlMqttClient::disconnectFromHost()

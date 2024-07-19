@@ -1319,17 +1319,6 @@ Window {
             subscribebut.enabled = false
         }
     }
-    Button{
-        id:  saveNut
-        x:700; y:500
-        width: 80
-        height:  20
-        flat:  false
-        text:  "save"
-        onClicked: {
-
-        }
-    }
 
     BorderImage {
         id: borderImage
