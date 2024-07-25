@@ -145,7 +145,7 @@ void jsonPack(void)//json打包 分段 heap太小一次性打包不下
 	//char json0[] = "{\"cSpeed\": %d,\"Pos\": %d,\"bAlarm\": %d,\"lmSpeed\": %d,\"rmSpeed\": %d,\"bTemp\": %d,\"bLevel\": %d,\"gMode\": %d,\"cMode\": %d,\"acc_x"\:%f,\"acc_y"\:%f,\"acc_z"\:%f}";
 	//char json1[] = "{\"lmTorque\":%d,\"rmTorque\":%d,\"batVol\": %d,\"carDistce\": %d,\"mcu1Temp\": %d,\"mcu2Temp\": %d,\"brakeTravel\": %d,\"lmoTemp\": %d,\"rmoTemp\": %d,\"LbatAlr"\:&d,\"angle"\:&d}";
 	char json0[] = "{1,%d,%d,%d,%d,%d,%d,%d,%d,%d,%f,%f,%f}";
-	char json1[] = "{2,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d}";
+	char json1[] = "{2,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%f}";
 	char t_json[300];
 	if(!changeFlag)
 	{
@@ -161,7 +161,7 @@ void jsonPack(void)//json打包 分段 heap太小一次性打包不下
 		racingCarData.acc_x,
 		racingCarData.acc_y,
 		racingCarData.acc_z);
-		
+	
 		changeFlag = 1;
 	}
 	
@@ -178,7 +178,7 @@ void jsonPack(void)//json打包 分段 heap太小一次性打包不下
 		racingCarData.rmotorTemp,
 		racingCarData.LbatAlr,
 		racingCarData.angle,
-		ACC_X);
+		racingCarData.yaw);
 		
 		changeFlag = 0;
 	}

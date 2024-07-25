@@ -32,12 +32,19 @@ void decode(uint32_t ID,uint8_t *canData){
 			break;	
 		
 		case 0x214:
-			ACC_X = canData[0] + canData[1] * 256;
-			ACC_Y = canData[2] + canData[3] * 256;
-			ACC_Z = canData[4] + canData[5] * 256;
-			racingCarData.acc_x = ((float)ACC_X / 32768.0f) * 16.0f;
-			racingCarData.acc_y = ((float)ACC_Y / 32768.0f) * 16.0f;
-		    racingCarData.acc_z = ((float)ACC_Z / 32768.0f) * 16.0f;
+			racingCarData.sensor_diff = canData[0];
+		
+			if(racingCarData.sensor_diff == 0x51){
+			//ACC_X = canData[2] + canData[1] * 256;
+			//ACC_Y = canData[3] + canData[3] * 256;
+			//ACC_Z = canData[4] + canData[5] * 256;
+			racingCarData.acc_x = ((float)(canData[2] + canData[1] * 256) / 32768.0f) * 16.0f;
+			racingCarData.acc_y = ((float)(canData[3] + canData[3] * 256) / 32768.0f) * 16.0f;
+		    racingCarData.acc_z = ((float)(canData[4] + canData[5] * 256) / 32768.0f) * 16.0f;
+			}
+			else{
+				racingCarData.yaw = ((float)(canData[4] + canData[5] * 256) / 32768.0f) * 180.0f;
+			}
 		    racingCarData.angle = canData[6];
 			break;
 	}

@@ -2,7 +2,7 @@ Dependencies for Project 'STM32F429ZGT6', Target 'STM32F429ZGT6': (DO NOT MODIFY
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
 F (startup_stm32f429xx.s)(0x668FD2E1)(--cpu Cortex-M4.fp.sp -g --apcs=interwork --pd "__MICROLIB SETA 1" -I ../Core/Inc-I.\RTE\_STM32F429ZGT6-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 538" --pd "_RTE_ SETA 1" --pd "STM32F429xx SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f429xx.lst --xref -o stm32f429zgt6\startup_stm32f429xx.o --depend stm32f429zgt6\startup_stm32f429xx.d)
 F (..\Core\Src\Variable.c)(0x669526CC)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP/squareline -I ../BSP -I ../APP-I.\RTE\_STM32F429ZGT6-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F429xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F429xx-o stm32f429zgt6\variable.o --omf_browse stm32f429zgt6\variable.crf --depend stm32f429zgt6\variable.d)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../Core/Inc/main.h)(0x6695123C)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x668FD2E0)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x66906367)
@@ -98,7 +98,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
@@ -288,7 +288,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
@@ -354,7 +354,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
@@ -532,7 +532,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
@@ -590,7 +590,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
@@ -648,7 +648,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
@@ -706,7 +706,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
@@ -764,7 +764,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
@@ -822,7 +822,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
@@ -880,7 +880,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
@@ -937,7 +937,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
@@ -994,7 +994,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
@@ -1052,7 +1052,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
@@ -2465,7 +2465,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
 I (../Core/Inc/usart.h)(0x668FD2E0)
@@ -13957,7 +13957,7 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/libs/rlottie/lv_rlottie.h)(0x668FD2E1)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.h)(0x668FD2E1)
 I (..\Middlewares\LVGL\GUI_APP\squareline\ui_helpers.h)(0x66905AAA)
 I (..\Middlewares\LVGL\GUI_APP\squareline\ui_events.h)(0x66905AAA)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../Core/Inc/main.h)(0x6695123C)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x668FD2E0)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x66906367)
@@ -16405,7 +16405,7 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.h)(0x668FD2E1)
 I (..\Middlewares\LVGL\GUI_APP\squareline\fonts\../ui_helpers.h)(0x66905AAA)
 I (..\Middlewares\LVGL\GUI_APP\squareline\fonts\../ui_events.h)(0x66905AAA)
 F (..\Middlewares\LVGL\GUI_APP\squareline\components\ui_comp_hook.c)(0x66905AAA)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP/squareline -I ../BSP -I ../APP-I.\RTE\_STM32F429ZGT6-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F429xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F429xx-o stm32f429zgt6\ui_comp_hook.o --omf_browse stm32f429zgt6\ui_comp_hook.crf --depend stm32f429zgt6\ui_comp_hook.d)
-F (..\APP\app_can.c)(0x6691FB35)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP/squareline -I ../BSP -I ../APP-I.\RTE\_STM32F429ZGT6-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F429xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F429xx-o stm32f429zgt6\app_can.o --omf_browse stm32f429zgt6\app_can.crf --depend stm32f429zgt6\app_can.d)
+F (..\APP\app_can.c)(0x66A241C8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP/squareline -I ../BSP -I ../APP-I.\RTE\_STM32F429ZGT6-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F429xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F429xx-o stm32f429zgt6\app_can.o --omf_browse stm32f429zgt6\app_can.crf --depend stm32f429zgt6\app_can.d)
 I (..\APP\APP_CAN.h)(0x6691F686)
 I (../Core/Inc/main.h)(0x6695123C)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x668FD2E0)
@@ -16446,7 +16446,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
@@ -16588,7 +16588,7 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/libs/rlottie/lv_rlottie.h)(0x668FD2E1)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.h)(0x668FD2E1)
 I (../Middlewares/LVGL/GUI_APP/squareline/ui_helpers.h)(0x66905AAA)
 I (../Middlewares/LVGL/GUI_APP/squareline/ui_events.h)(0x66905AAA)
-F (..\APP\app_EC200.c)(0x668FD38D)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP/squareline -I ../BSP -I ../APP-I.\RTE\_STM32F429ZGT6-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F429xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F429xx-o stm32f429zgt6\app_ec200.o --omf_browse stm32f429zgt6\app_ec200.crf --depend stm32f429zgt6\app_ec200.d)
+F (..\APP\app_EC200.c)(0x66A2422A)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP/squareline -I ../BSP -I ../APP-I.\RTE\_STM32F429ZGT6-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F429xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F429xx-o stm32f429zgt6\app_ec200.o --omf_browse stm32f429zgt6\app_ec200.crf --depend stm32f429zgt6\app_ec200.d)
 I (..\APP\app_EC200.h)(0x668FD2E0)
 I (../Core/Inc/main.h)(0x6695123C)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x668FD2E0)
@@ -16629,7 +16629,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
@@ -16687,7 +16687,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
@@ -16747,7 +16747,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
@@ -16805,7 +16805,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
@@ -16864,7 +16864,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)
@@ -16925,7 +16925,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x668FD2E0)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x668FD2E0)
-I (../Core/Inc/Variable.h)(0x669526CC)
+I (../Core/Inc/Variable.h)(0x66A24080)
 I (../APP/app_EC200.h)(0x668FD2E0)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6584412A)
 I (../BSP/bsp_EC200.h)(0x668FD2E0)

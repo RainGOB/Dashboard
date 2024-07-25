@@ -53,9 +53,11 @@ struct RacingCarData{
 	uint8_t mcu2Temp;  
 		
 	//ID:0x204
+	uint8_t sensor_diff;
 	float acc_x;
 	float acc_y;
 	float acc_z;
+	float yaw;
 	uint8_t angle;
 };
 

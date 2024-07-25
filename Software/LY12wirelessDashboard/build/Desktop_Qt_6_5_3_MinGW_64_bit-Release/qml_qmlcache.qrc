@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<RCC>
+    <qresource prefix="/">
+        <file alias="main.qml">../../main.qml</file>
+        <file alias="Message.qml">../../Message.qml</file>
+        <file alias="big-numbers.ttf">../../big-numbers.ttf</file>
+        <file alias="Cinzel-Regular.ttf">../../Cinzel-Regular.ttf</file>
+        <file alias="Cookie-Regular.ttf">../../Cookie-Regular.ttf</file>
+        <file alias="FasterOne-Regular.ttf">../../FasterOne-Regular.ttf</file>
+        <file alias="lingyun.ico">../../lingyun.ico</file>
+        <file alias="lingyun.png">../../lingyun.png</file>
+        <file alias="Lobster-Regular.ttf">../../Lobster-Regular.ttf</file>
+        <file alias="TTZhiHeiJ-W4.ttf">../../TTZhiHeiJ-W4.ttf</file>
+        <file alias="1.jpg">../../1.jpg</file>
+        <file alias="CircelBar.qml">../../CircelBar.qml</file>
+        <file alias="SpeedNeedle.qml">../../SpeedNeedle.qml</file>
+        <file alias="Anglesensor.qml">../../Anglesensor.qml</file>
+        <file alias="Accelaratorindicator.qml">../../Accelaratorindicator.qml</file>
+    </qresource>
+</RCC>
