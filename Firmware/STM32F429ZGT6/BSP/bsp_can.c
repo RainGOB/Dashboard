@@ -11,14 +11,22 @@ void CanFilter_Config()
 	Can_FilterStructure.FilterBank = 10;
 	Can_FilterStructure.FilterMode = CAN_FILTERMODE_IDMASK;
 	Can_FilterStructure.FilterScale = CAN_FILTERSCALE_32BIT;
-	Can_FilterStructure.FilterIdHigh = 0x000 << 5;			//32位下，存储要过滤ID的高16位
+	
+	//Can_FilterStructure.FilterIdHigh = 0x000 << 5;			//32位下，存储要过滤ID的高16位
+    //Can_FilterStructure.FilterIdLow = 0x0000;					//32位下，存储要过滤ID的低16位
+    //Can_FilterStructure.FilterMaskIdHigh = 0x0000;			//掩码模式下，存储的是掩码
+    //Can_FilterStructure.FilterMaskIdLow = 0x0000;
+	
+	Can_FilterStructure.FilterIdHigh = (0x210 << 5);			//32位下，存储要过滤ID的高16位
     Can_FilterStructure.FilterIdLow = 0x0000;					//32位下，存储要过滤ID的低16位
-    Can_FilterStructure.FilterMaskIdHigh = 0x0000;			//掩码模式下，存储的是掩码
-    Can_FilterStructure.FilterMaskIdLow = 0x0000;
-    //Can_FilterStructure.FilterIdHigh = (0x210 << 3)>>16;			//32位下，存储要过滤ID的高16位
-    //Can_FilterStructure.FilterIdLow = (0x210<<3)|(0x01<<2)|(0x00<<1);					//32位下，存储要过滤ID的低16位
+    Can_FilterStructure.FilterMaskIdHigh = (0xFFC << 5);			//掩码模式下，存储的是掩码
+    Can_FilterStructure.FilterMaskIdLow = 0 | 0x02;
+	
+    //Can_FilterStructure.FilterIdHigh = ((0x210 | 0x50 << 3)>>16;			//32位下，存储要过滤ID的高16位
+    //Can_FilterStructure.FilterIdLow = ((0x210 | 0x50)<<3)|(0x01<<2)|(0x00<<1);					//32位下，存储要过滤ID的低16位
     //Can_FilterStructure.FilterMaskIdHigh = (0xFFC<<3)>>16;			//掩码模式下，存储的是掩码
     //Can_FilterStructure.FilterMaskIdLow = (0xFFC<<3)|(0x01<<2)|(0x01<<1);
+	
 	Can_FilterStructure.FilterFIFOAssignment = 0;       //储存在哪一个fifo
 	Can_FilterStructure.FilterActivation = ENABLE; //激活can
 	Can_FilterStructure.SlaveStartFilterBank = 0;
@@ -50,8 +58,8 @@ void canfilter_init(){
 
 //发送函数
 void CAN2_Send(uint32_t CAN_ID,uint8_t *CAN_Data){
-	TxBuff.IDE = CAN_ID_EXT;
-	TxBuff.ExtId = CAN_ID;
+	TxBuff.IDE = CAN_ID_STD;
+	TxBuff.StdId = CAN_ID;
 	TxBuff.RTR = CAN_RTR_DATA;  //设置传送的数据帧
 	TxBuff.DLC = 8;            //数据长度
 	
@@ -74,7 +82,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan){
 		status = HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxBuff, mdata);
 		
 		if(HAL_OK == status){
-			decode(RxBuff.ExtId,mdata);
+			decode(RxBuff.StdId,mdata);
 			osEventFlagsSet(Upld_data_eventHandle,0x0f);  //0000 1111  事件标志位
 		}
 	}

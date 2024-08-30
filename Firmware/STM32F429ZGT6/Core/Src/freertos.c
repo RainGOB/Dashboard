@@ -64,7 +64,7 @@ const osThreadAttr_t ec20_attributes = {
 osThreadId_t lvgl_meterHandle;
 const osThreadAttr_t lvgl_meter_attributes = {
   .name = "lvgl_meter",
-  .stack_size = 512 * 4,
+  .stack_size = 512 * 8,
   .priority = (osPriority_t) osPriorityRealtime2,
 };
 /* Definitions for lvgl */
@@ -201,6 +201,7 @@ void entry_ec20(void *argument)
 void entry_lvgl_meter(void *argument)
 {
   /* USER CODE BEGIN entry_lvgl_meter */
+	osDelay(5000);
 	canfilter_init();
 	uint32_t event_bit;
   /* Infinite loop */
@@ -290,7 +291,7 @@ void entry_lvgl(void *argument)
 		
 	  osMutexRelease(lvgl_mutexHandle);
 		
-	  osDelay(1);
+	  osDelay(10);
   }
   /* USER CODE END entry_lvgl */
 }
