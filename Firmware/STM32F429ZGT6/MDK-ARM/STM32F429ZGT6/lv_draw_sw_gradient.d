@@ -21,6 +21,7 @@ stm32f429zgt6\lv_draw_sw_gradient.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\sw\..
 stm32f429zgt6\lv_draw_sw_gradient.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\sw\../../misc/lv_txt.h
 stm32f429zgt6\lv_draw_sw_gradient.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 stm32f429zgt6\lv_draw_sw_gradient.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\sw\../../misc/lv_printf.h
+stm32f429zgt6\lv_draw_sw_gradient.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 stm32f429zgt6\lv_draw_sw_gradient.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\sw\../../misc/lv_bidi.h
 stm32f429zgt6\lv_draw_sw_gradient.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\sw\../../misc/lv_style_gen.h
 stm32f429zgt6\lv_draw_sw_gradient.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\sw\lv_draw_sw_dither.h

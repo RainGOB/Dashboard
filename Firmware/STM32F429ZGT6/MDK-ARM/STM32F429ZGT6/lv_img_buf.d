@@ -24,5 +24,6 @@ stm32f429zgt6\lv_img_buf.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\../misc/lv_ani
 stm32f429zgt6\lv_img_buf.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\../misc/lv_txt.h
 stm32f429zgt6\lv_img_buf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 stm32f429zgt6\lv_img_buf.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\../misc/lv_printf.h
+stm32f429zgt6\lv_img_buf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 stm32f429zgt6\lv_img_buf.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\../misc/lv_bidi.h
 stm32f429zgt6\lv_img_buf.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\../misc/lv_style_gen.h

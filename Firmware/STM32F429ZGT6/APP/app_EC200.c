@@ -48,7 +48,8 @@ uint8_t EC200_MQTTInit(){
 	Tx_Flag = 2;
 	printf("AT+QMTPUBEX=0,0,0,0,\"mqtt\",%d\r\n",4);
 	osDelay(10);
-	printf("%s","test");
+	printf("%s","{1,10,10,3,1000,1000,2,50,2,2,0.01,0.01,0.01,10.01,4,4}");
+	//1,%d,%d,%d,%d,%d,%f,%d,%d,%d,%f,%f,%f,%f}
 	osDelay(10);
 	
 	Tx_Flag =1;
@@ -144,8 +145,8 @@ void jsonPack(void)//json打包 分段 heap太小一次性打包不下
 	static uint8_t changeFlag;
 	//char json0[] = "{\"cSpeed\": %d,\"Pos\": %d,\"bAlarm\": %d,\"lmSpeed\": %d,\"rmSpeed\": %d,\"bTemp\": %d,\"bLevel\": %d,\"gMode\": %d,\"cMode\": %d,\"acc_x"\:%f,\"acc_y"\:%f,\"acc_z"\:%f}";
 	//char json1[] = "{\"lmTorque\":%d,\"rmTorque\":%d,\"batVol\": %d,\"carDistce\": %d,\"mcu1Temp\": %d,\"mcu2Temp\": %d,\"brakeTravel\": %d,\"lmoTemp\": %d,\"rmoTemp\": %d,\"LbatAlr"\:&d,\"angle"\:&d}";
-	char json0[] = "{1,%d,%d,%d,%d,%d,%d,%d,%d,%d,%f,%f,%f}";
-	char json1[] = "{2,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%f}";
+	char json0[] = "{1,%d,%d,%d,%d,%d,%f,%d,%d,%d,%f,%f,%f,%f,%d,%d}";
+	char json1[] = "{2,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%f,%f,%d,%d}";
 	char t_json[300];
 	if(!changeFlag)
 	{
@@ -154,13 +155,16 @@ void jsonPack(void)//json打包 分段 heap太小一次性打包不下
 		racingCarData.batAlarm, \
 		racingCarData.lmotorSpeed, \
 		racingCarData.rmotorSpeed, \
-		racingCarData.batTemp, \
+		racingCarData.batCur, \
 		racingCarData.batLevel, \
 		racingCarData.gearMode, \
 		racingCarData.carMode,
 		racingCarData.acc_x,
 		racingCarData.acc_y,
-		racingCarData.acc_z);
+		racingCarData.acc_z,
+		racingCarData.roll,
+		racingCarData.lmcu_dccur,
+		racingCarData.rmcu_dccur);
 	
 		changeFlag = 1;
 	}
@@ -178,7 +182,10 @@ void jsonPack(void)//json打包 分段 heap太小一次性打包不下
 		racingCarData.rmotorTemp,
 		racingCarData.LbatAlr,
 		racingCarData.angle,
-		racingCarData.yaw);
+		racingCarData.yaw,
+		racingCarData.pitch,
+		racingCarData.lmcu_accur,
+		racingCarData.rmcu_accur);
 		
 		changeFlag = 0;
 	}

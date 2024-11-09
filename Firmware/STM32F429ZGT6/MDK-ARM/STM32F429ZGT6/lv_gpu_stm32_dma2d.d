@@ -28,6 +28,7 @@ stm32f429zgt6\lv_gpu_stm32_dma2d.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\stm32_
 stm32f429zgt6\lv_gpu_stm32_dma2d.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\stm32_dma2d\../../hal/../draw/../misc/lv_txt.h
 stm32f429zgt6\lv_gpu_stm32_dma2d.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 stm32f429zgt6\lv_gpu_stm32_dma2d.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\stm32_dma2d\../../hal/../draw/../misc/lv_printf.h
+stm32f429zgt6\lv_gpu_stm32_dma2d.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 stm32f429zgt6\lv_gpu_stm32_dma2d.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\stm32_dma2d\../../hal/../draw/../misc/lv_bidi.h
 stm32f429zgt6\lv_gpu_stm32_dma2d.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\stm32_dma2d\../../hal/../draw/../misc/lv_style_gen.h
 stm32f429zgt6\lv_gpu_stm32_dma2d.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\stm32_dma2d\../../hal/../draw/lv_img_decoder.h

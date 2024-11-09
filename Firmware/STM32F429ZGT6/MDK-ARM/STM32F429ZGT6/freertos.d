@@ -71,7 +71,6 @@ stm32f429zgt6\freertos.o: ../Middlewares/LVGL/GUI/lvgl/src/misc/lv_async.h
 stm32f429zgt6\freertos.o: ../Middlewares/LVGL/GUI/lvgl/src/misc/lv_anim_timeline.h
 stm32f429zgt6\freertos.o: ../Middlewares/LVGL/GUI/lvgl/src/misc/lv_anim.h
 stm32f429zgt6\freertos.o: ../Middlewares/LVGL/GUI/lvgl/src/misc/lv_printf.h
-stm32f429zgt6\freertos.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 stm32f429zgt6\freertos.o: ../Middlewares/LVGL/GUI/lvgl/src/hal/lv_hal.h
 stm32f429zgt6\freertos.o: ../Middlewares/LVGL/GUI/lvgl/src/hal/lv_hal_disp.h
 stm32f429zgt6\freertos.o: ../Middlewares/LVGL/GUI/lvgl/src/hal/lv_hal.h
@@ -83,6 +82,7 @@ stm32f429zgt6\freertos.o: ../Middlewares/LVGL/GUI/lvgl/src/hal/../draw/../misc/.
 stm32f429zgt6\freertos.o: ../Middlewares/LVGL/GUI/lvgl/src/hal/../draw/../misc/lv_color.h
 stm32f429zgt6\freertos.o: ../Middlewares/LVGL/GUI/lvgl/src/hal/../draw/../misc/lv_assert.h
 stm32f429zgt6\freertos.o: ../Middlewares/LVGL/GUI/lvgl/src/hal/../draw/../misc/lv_txt.h
+stm32f429zgt6\freertos.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 stm32f429zgt6\freertos.o: ../Middlewares/LVGL/GUI/lvgl/src/hal/../draw/../misc/lv_bidi.h
 stm32f429zgt6\freertos.o: ../Middlewares/LVGL/GUI/lvgl/src/hal/../draw/../misc/lv_style_gen.h
 stm32f429zgt6\freertos.o: ../Middlewares/LVGL/GUI/lvgl/src/hal/../draw/lv_img_decoder.h

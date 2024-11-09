@@ -52,13 +52,16 @@ void QmlMqttClient::parse(QByteArray package)
         setBatAlarm(packageStr[3].toInt());
         setLmotorSpeed(packageStr[4].toInt());
         setRmotorSpeed(packageStr[5].toInt());
-        setBatTemp(packageStr[6].toInt());
+        setbatcur(packageStr[6].toFloat());
         setBatLevel(packageStr[7].toInt());
         setGearMode(packageStr[8].toInt());
         setCarMode(packageStr[9].toInt());
         setAcc_x(packageStr[10].toFloat());
         setAcc_y(packageStr[11].toFloat());
         setAcc_z(packageStr[12].toFloat());
+        setRoll(packageStr[13].toFloat());
+        setLmcudccur(packageStr[14].toInt());
+        setRmcudccur(packageStr[15].toInt());
         attend_cell(packageStr,timedata);
     }
     else
@@ -75,6 +78,9 @@ void QmlMqttClient::parse(QByteArray package)
         setLbatAlr(packageStr[10].toInt());
         setAngle(packageStr[11].toInt());
         setYaw(packageStr[12].toFloat());
+        setPitch(packageStr[13].toFloat());
+        setLmcuaccur(packageStr[14].toInt());
+        setRmcuaccur(packageStr[15].toInt());
         attend_cell(packageStr,timedata);
     }
 }

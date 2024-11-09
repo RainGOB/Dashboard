@@ -18,7 +18,7 @@ stm32f429zgt6\lv_rlottie.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\libs\rlottie\
 stm32f429zgt6\lv_rlottie.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\libs\rlottie\../../../../src/misc/lv_anim_timeline.h
 stm32f429zgt6\lv_rlottie.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\libs\rlottie\../../../../src/misc/lv_anim.h
 stm32f429zgt6\lv_rlottie.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\libs\rlottie\../../../../src/misc/lv_printf.h
-stm32f429zgt6\lv_rlottie.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+stm32f429zgt6\lv_rlottie.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 stm32f429zgt6\lv_rlottie.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\libs\rlottie\../../../../src/hal/lv_hal.h
 stm32f429zgt6\lv_rlottie.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\libs\rlottie\../../../../src/hal/lv_hal_disp.h
 stm32f429zgt6\lv_rlottie.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\libs\rlottie\../../../../src/hal/lv_hal.h
@@ -30,6 +30,7 @@ stm32f429zgt6\lv_rlottie.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\libs\rlottie\
 stm32f429zgt6\lv_rlottie.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\libs\rlottie\../../../../src/hal/../draw/../misc/lv_color.h
 stm32f429zgt6\lv_rlottie.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\libs\rlottie\../../../../src/hal/../draw/../misc/lv_assert.h
 stm32f429zgt6\lv_rlottie.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\libs\rlottie\../../../../src/hal/../draw/../misc/lv_txt.h
+stm32f429zgt6\lv_rlottie.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 stm32f429zgt6\lv_rlottie.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\libs\rlottie\../../../../src/hal/../draw/../misc/lv_bidi.h
 stm32f429zgt6\lv_rlottie.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\libs\rlottie\../../../../src/hal/../draw/../misc/lv_style_gen.h
 stm32f429zgt6\lv_rlottie.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\libs\rlottie\../../../../src/hal/../draw/lv_img_decoder.h

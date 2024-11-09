@@ -12,15 +12,15 @@ void CanFilter_Config()
 	Can_FilterStructure.FilterMode = CAN_FILTERMODE_IDMASK;
 	Can_FilterStructure.FilterScale = CAN_FILTERSCALE_32BIT;
 	
-	//Can_FilterStructure.FilterIdHigh = 0x000 << 5;			//32位下，存储要过滤ID的高16位
-    //Can_FilterStructure.FilterIdLow = 0x0000;					//32位下，存储要过滤ID的低16位
-    //Can_FilterStructure.FilterMaskIdHigh = 0x0000;			//掩码模式下，存储的是掩码
-    //Can_FilterStructure.FilterMaskIdLow = 0x0000;
-	
-	Can_FilterStructure.FilterIdHigh = (0x210 << 5);			//32位下，存储要过滤ID的高16位
+	Can_FilterStructure.FilterIdHigh = 0x000 << 5;			//32位下，存储要过滤ID的高16位
     Can_FilterStructure.FilterIdLow = 0x0000;					//32位下，存储要过滤ID的低16位
-    Can_FilterStructure.FilterMaskIdHigh = (0xFFC << 5);			//掩码模式下，存储的是掩码
-    Can_FilterStructure.FilterMaskIdLow = 0 | 0x02;
+    Can_FilterStructure.FilterMaskIdHigh = 0x0000;			//掩码模式下，存储的是掩码
+    Can_FilterStructure.FilterMaskIdLow = 0x0000;
+	
+	//Can_FilterStructure.FilterIdHigh = ((0x210 | 0x55)<< 5);			//32位下，存储要过滤ID的高16位
+    //Can_FilterStructure.FilterIdLow = 0x0000;					//32位下，存储要过滤ID的低16位
+    //Can_FilterStructure.FilterMaskIdHigh = (0xFFC << 5);			//掩码模式下，存储的是掩码
+    //Can_FilterStructure.FilterMaskIdLow = 0 | 0x02;
 	
     //Can_FilterStructure.FilterIdHigh = ((0x210 | 0x50 << 3)>>16;			//32位下，存储要过滤ID的高16位
     //Can_FilterStructure.FilterIdLow = ((0x210 | 0x50)<<3)|(0x01<<2)|(0x00<<1);					//32位下，存储要过滤ID的低16位

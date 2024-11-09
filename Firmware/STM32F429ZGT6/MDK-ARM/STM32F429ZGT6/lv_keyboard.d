@@ -23,6 +23,7 @@ stm32f429zgt6\lv_keyboard.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\widgets\keyb
 stm32f429zgt6\lv_keyboard.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\widgets\keyboard\../../../widgets/../core/../misc/lv_txt.h
 stm32f429zgt6\lv_keyboard.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 stm32f429zgt6\lv_keyboard.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\widgets\keyboard\../../../widgets/../core/../misc/lv_printf.h
+stm32f429zgt6\lv_keyboard.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 stm32f429zgt6\lv_keyboard.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\widgets\keyboard\../../../widgets/../core/../misc/lv_bidi.h
 stm32f429zgt6\lv_keyboard.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\widgets\keyboard\../../../widgets/../core/../misc/lv_style_gen.h
 stm32f429zgt6\lv_keyboard.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\widgets\keyboard\../../../widgets/../core/../hal/lv_hal.h

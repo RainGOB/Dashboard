@@ -25,6 +25,7 @@ stm32f429zgt6\lv_img_cache.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\../misc/lv_a
 stm32f429zgt6\lv_img_cache.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\../misc/lv_txt.h
 stm32f429zgt6\lv_img_cache.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 stm32f429zgt6\lv_img_cache.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\../misc/lv_printf.h
+stm32f429zgt6\lv_img_cache.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 stm32f429zgt6\lv_img_cache.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\../misc/lv_bidi.h
 stm32f429zgt6\lv_img_cache.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\../misc/lv_style_gen.h
 stm32f429zgt6\lv_img_cache.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\../hal/lv_hal_tick.h

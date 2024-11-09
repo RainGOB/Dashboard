@@ -8,6 +8,7 @@ uint8_t interrupt;
 uint8_t IRQ_JudgEnable = 0;
 uint8_t CANOK_Flag = 0;
 uint8_t KeyControlData[8];
+uint8_t accsencordata[8];
 
 uint8_t EC200_RdyFlag=0;
 uint8_t MQTTClient_RdyFlag = 0;
@@ -17,11 +18,6 @@ uint8_t QMTOPEN_Flag = 0;
 uint8_t QMTCONN_Flag = 0;
 uint8_t QMTCFG_Flag = 0;
 
-int16_t ACC_X;
-int16_t ACC_Y;
-int16_t ACC_Z;
-
-
 struct RacingCarData racingCarData;
 
 uint16_t *lcd_fb;
@@ -29,4 +25,3 @@ uint16_t *lcd_fb;
 uint8_t TB_State = 0;   //1 Ç°½ø 0 ºóÍË
 uint8_t TBSA_Flag = 0;  
 uint8_t TBSO_Flag = 0;
-

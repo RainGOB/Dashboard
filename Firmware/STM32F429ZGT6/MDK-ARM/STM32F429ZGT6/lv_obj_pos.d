@@ -21,6 +21,7 @@ stm32f429zgt6\lv_obj_pos.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../misc/lv_ani
 stm32f429zgt6\lv_obj_pos.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../misc/lv_txt.h
 stm32f429zgt6\lv_obj_pos.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 stm32f429zgt6\lv_obj_pos.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../misc/lv_printf.h
+stm32f429zgt6\lv_obj_pos.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 stm32f429zgt6\lv_obj_pos.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../misc/lv_bidi.h
 stm32f429zgt6\lv_obj_pos.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../misc/lv_style_gen.h
 stm32f429zgt6\lv_obj_pos.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../hal/lv_hal.h

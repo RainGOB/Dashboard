@@ -6,5 +6,6 @@
 
 void decode(uint32_t ID,uint8_t *mdata);
 void keyControlCanSend(void);
+void acc_sencorCansend();
 
 #endif

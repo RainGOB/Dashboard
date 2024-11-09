@@ -4,7 +4,4 @@ stm32f429zgt6\lv_printf.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_inte
 stm32f429zgt6\lv_printf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 stm32f429zgt6\lv_printf.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_kconfig.h
 stm32f429zgt6\lv_printf.o: ../Middlewares/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
-stm32f429zgt6\lv_printf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
-stm32f429zgt6\lv_printf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-stm32f429zgt6\lv_printf.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_types.h
-stm32f429zgt6\lv_printf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+stm32f429zgt6\lv_printf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

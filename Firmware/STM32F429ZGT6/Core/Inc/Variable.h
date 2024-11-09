@@ -13,6 +13,7 @@ extern uint8_t Tx_Flag;
 extern uint8_t IRQ_JudgEnable;
 extern uint8_t CANOK_Flag;
 extern uint8_t KeyControlData[8];
+extern uint8_t accsencordata[8];
 
 extern uint8_t EC200_RdyFlag;
 extern uint8_t MQTTClient_RdyFlag;
@@ -21,10 +22,6 @@ extern uint8_t PUBOK_Flag;
 extern uint8_t QMTOPEN_Flag;
 extern uint8_t QMTCONN_Flag;
 extern uint8_t QMTCFG_Flag;
-
-extern int16_t ACC_X;
-extern int16_t ACC_Y;
-extern int16_t ACC_Z;
 
 struct RacingCarData{
 	//ID:0X211
@@ -37,7 +34,7 @@ struct RacingCarData{
 
 	//ID:0X213
 	uint8_t batAlarm;            //电池告警  0~4 无告警：0 一级告警：1（最严重） 二级告警：2 三级告警：3
-	uint8_t batTemp;               //电池温度  0-160  offset:-40
+	float batCur;               //电池电流  -1000~+1000  offset:-1000
 	uint8_t batLevel;            //电池电量  0-100
 	uint16_t batVol;              //电池电压  0-900
 	uint8_t gearMode;            //挡位信息  1Bit
@@ -52,13 +49,21 @@ struct RacingCarData{
 	uint8_t rmotorTemp;          //右电机温度
 	uint8_t mcu2Temp;  
 		
+	//ID:0x214
+	uint16_t lmcu_dccur;
+	uint16_t rmcu_dccur;
+	uint16_t lmcu_accur;
+	uint16_t rmcu_accur;
+		
 	//ID:0x204
 	uint8_t sensor_diff;
 	float acc_x;
 	float acc_y;
 	float acc_z;
 	float yaw;
-	uint8_t angle;
+	float pitch;
+	float roll;
+	float angle;
 };
 
 extern struct RacingCarData racingCarData;

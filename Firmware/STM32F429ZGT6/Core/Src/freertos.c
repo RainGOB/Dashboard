@@ -217,7 +217,10 @@ void entry_lvgl_meter(void *argument)
 	  if(event_bit){
 		  if(CANOK_Flag == 1){
 			  keyControlCanSend();
+			  HAL_Delay(5);
 			  TB6600_motion();
+			  acc_sencorCansend();
+			  HAL_Delay(5);
 		  }
 	      lv_label_set_text_fmt(ui_SPEED, "%02d", racingCarData.FrontSpeed);
 		  lv_label_set_text_fmt(ui_L_RPM, "%04d", racingCarData.lmotorSpeed);
@@ -227,7 +230,11 @@ void entry_lvgl_meter(void *argument)
 		  lv_label_set_text_fmt(ui_L_MCU_Tem,"%02d",racingCarData.mcu1Temp);
 		  lv_label_set_text_fmt(ui_R_MCU_Tem,"%02d",racingCarData.mcu2Temp);
 		  lv_label_set_text_fmt(ui_SOC,"%d%%",racingCarData.batLevel);
-	  
+		  
+		  lv_label_set_text_fmt(ui_time_used,"%.2f",racingCarData.acc_x);
+		  lv_label_set_text_fmt(ui_best_time,"%.2f",racingCarData.acc_y);
+		  lv_label_set_text_fmt(ui_lap_time,"%.2f",racingCarData.batCur);
+		  
 		  lv_slider_set_value(ui_SliderSOC,racingCarData.batLevel,LV_ANIM_ON);
 		  lv_slider_set_value(ui_Sliderspeed,racingCarData.FrontSpeed,LV_ANIM_ON);
 		  
@@ -259,8 +266,11 @@ void entry_lvgl_meter(void *argument)
 		  }
 		  
 		  
+
+		  
 	 }
 	  osMutexRelease(lvgl_mutexHandle);
+	 
   }
   /* USER CODE END entry_lvgl_meter */
 }
@@ -291,7 +301,7 @@ void entry_lvgl(void *argument)
 		
 	  osMutexRelease(lvgl_mutexHandle);
 		
-	  osDelay(10);
+	  osDelay(20);
   }
   /* USER CODE END entry_lvgl */
 }
@@ -330,7 +340,7 @@ void entry_Iot_upload(void *argument)
 			 osThreadResume(ec20Handle);
 	  }
 	  }
-	  osDelay(100);
+	  osDelay(50);
   }
   /* USER CODE END entry_Iot_upload */
 }

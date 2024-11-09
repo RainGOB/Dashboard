@@ -1,4 +1,5 @@
 #ifndef QMLMQTTCLIENT_H
+
 #define QMLMQTTCLIENT_H
 
 #include "QObject"
@@ -39,7 +40,7 @@ class QmlMqttClient : public QMqttClient
     Q_OBJECT
     Q_PROPERTY(unsigned int carSpeed READ carSpeed WRITE setCarSpeed NOTIFY carSpeedChanged)
     Q_PROPERTY(unsigned int batLevel READ batLevel WRITE setBatLevel NOTIFY batLevelChanged)
-    Q_PROPERTY(unsigned int batTemp READ batTemp WRITE setBatTemp NOTIFY batTempChanged)
+    Q_PROPERTY(float batcur READ batcur WRITE setbatcur NOTIFY batcurChanged)
     Q_PROPERTY(unsigned int lmotorTemp READ lmotorTemp WRITE setLmotorTemp NOTIFY lmotorTempChanged)
     Q_PROPERTY(unsigned int rmotorTemp READ rmotorTemp WRITE setRmotorTemp NOTIFY rmotorTempChanged)
     Q_PROPERTY(unsigned int lmotorSpeed READ lmotorSpeed WRITE setLmotorSpeed NOTIFY lmotorSpeedChanged)
@@ -60,7 +61,13 @@ class QmlMqttClient : public QMqttClient
     Q_PROPERTY(float acc_x READ acc_x WRITE setAcc_x NOTIFY acc_xChanged)
     Q_PROPERTY(float acc_y READ acc_y WRITE setAcc_y NOTIFY acc_yChanged)
     Q_PROPERTY(float acc_z READ acc_z WRITE setAcc_z NOTIFY acc_zChanged)
-    Q_PROPERTY(float Yaw READ Yaw WRITE setYaw NOTIFY YawChanged);
+    Q_PROPERTY(float yaw READ yaw WRITE setyaw NOTIFY yawChanged);
+    Q_PROPERTY(float roll READ roll WRITE setRoll NOTIFY rollChanged)
+    Q_PROPERTY(float pitch READ pitch WRITE setPitch NOTIFY pitchChanged)
+    Q_PROPERTY(unsigned int lmcudccur READ lmcudccur WRITE setLmcudccur NOTIFY lmcudccurChanged)
+    Q_PROPERTY(unsigned int rmcudccur READ rmcudccur WRITE setRmcudccur NOTIFY rmcudccurChanged)
+    Q_PROPERTY(unsigned int lmcuaccur READ lmcuaccur WRITE setLmcuaccur NOTIFY lmcuaccurChanged)
+    Q_PROPERTY(unsigned int rmcuaccur READ rmcuaccur WRITE setRmcuaccur NOTIFY rmcuaccurChanged FINAL)
     Q_PROPERTY(QMqttClient::ClientState state READ state WRITE setState NOTIFY stateChanged)
 public:
     QmlMqttClient(QObject *parent = nullptr);
@@ -73,11 +80,11 @@ public:
         return m_carSpeed;
     }
 
-    unsigned int batLevel(){
+    int batLevel(){
         return m_batLevel;
     }
-    unsigned int batTemp(){
-        return m_batTemp;
+    float batcur(){
+        return m_batcur;
     }
     unsigned int lmotorTemp(){
         return m_lmotorTemp;
@@ -147,8 +154,32 @@ public:
         return m_acc_z;
     }
 
-    float Yaw(){
-        return m_Yaw;
+    float yaw(){
+        return m_yaw;
+    }
+
+    float roll(){
+        return m_roll;
+    }
+
+    float pitch(){
+        return m_pitch;
+    }
+
+    unsigned int lmcudccur(){
+        return m_lmcudccur;
+    }
+
+    unsigned int rmcudccur(){
+        return m_rmcudccur;
+    }
+
+    unsigned int lmcuaccur(){
+        return m_lmcuaccur;
+    }
+
+    unsigned int rmcuaccur(){
+        return m_rmcuaccur;
     }
 
     void setCarSpeed(const unsigned int &carSpeed) {
@@ -170,10 +201,10 @@ public:
             emit batLevelChanged();//电量变化 触发信号
         }
     }
-    void setBatTemp(const unsigned int &batTemp) {
-        if(batTemp != m_batTemp) {
-            m_batTemp = batTemp;
-            emit batTempChanged();//电池温度变化 触发信号
+    void setbatcur(const float &batcur) {
+        if(batcur != m_batcur) {
+            m_batcur = batcur;
+            emit batcurChanged();//电池温度变化 触发信号
         }
     }
     void setLmotorTemp(const unsigned int &lmotorTemp) {
@@ -273,27 +304,69 @@ public:
         }
     }
     void setAcc_x(const float &acc_x){
-        if(acc_x!=m_acc_x+10){
-            m_acc_x = acc_x+10;
+        if(acc_x!=m_acc_x){
+            m_acc_x = acc_x;
             emit acc_xChanged();
         }
     }
     void setAcc_y(const float &acc_y){
-        if(acc_y!=m_acc_y+10){
-            m_acc_y = acc_y+10;
+        if(acc_y!=m_acc_y){
+            m_acc_y = acc_y;
             emit acc_yChanged();
         }
     }
     void setAcc_z(const float  &acc_z){
-        if(acc_z!=m_acc_z+10){
-            m_acc_z = acc_z+10;
+        if(acc_z!=m_acc_z){
+            m_acc_z = acc_z;
             emit acc_zChanged();
         }
     }
-    void setYaw(const float &Yaw){
-        if(Yaw!=m_Yaw){
-            m_Yaw = Yaw;
-            emit YawChanged();
+    void setYaw(const float &yaw){
+        if(yaw!=m_yaw){
+            m_yaw = yaw;
+            emit yawChanged();
+        }
+    }
+
+    void setRoll(const float &roll){
+        if(roll!=m_roll){
+            m_roll = roll;
+            emit rollChanged();
+        }
+    }
+
+    void setPitch(const float &pitch){
+        if(pitch!=m_pitch){
+            m_pitch = pitch;
+            emit pitchChanged();
+        }
+    }
+
+    void setLmcudccur(const unsigned int &lmcudccur){
+        if(lmcudccur!=m_lmcudccur){
+            m_lmcudccur = lmcudccur;
+            emit lmcudccurChanged();
+        }
+    }
+
+    void setRmcudccur(const unsigned int &rmcudccur){
+        if(rmcudccur!=m_rmcudccur){
+            m_rmcudccur = rmcudccur;
+            emit rmcudccurChanged();
+        }
+    }
+
+    void setLmcuaccur(const unsigned int &lmcuaccur){
+        if(lmcuaccur!=m_lmcuaccur){
+            m_lmcuaccur = lmcuaccur;
+            emit lmcuaccurChanged();
+        }
+    }
+
+    void setRmcuaccur(const unsigned int &rmcuaccur){
+        if(rmcuaccur!=m_rmcuaccur){
+            m_rmcuaccur = rmcuaccur;
+            emit rmcuaccurChanged();
         }
     }
 
@@ -305,7 +378,7 @@ public:
 signals:
     void carSpeedChanged();
     void batLevelChanged();
-    void batTempChanged();
+    void batcurChanged();
     void throPosChanged();
     void gearModeChanged();
     void carModeChanged();
@@ -326,7 +399,13 @@ signals:
     void acc_xChanged();
     void acc_yChanged();
     void acc_zChanged();
-    void YawChanged();
+    void yawChanged();
+    void rollChanged();
+    void pitchChanged();
+    void lmcudccurChanged();
+    void rmcudccurChanged();
+    void lmcuaccurChanged();
+    void rmcuaccurChanged();
 
     void stateChanged();
 public slots:
@@ -342,7 +421,7 @@ private:
 
     unsigned int m_carSpeed;
     unsigned int m_batLevel;
-    unsigned int m_batTemp;
+    float m_batcur;
     unsigned int m_throttlePos;
     unsigned int m_gearMode;// 0 R  1 N   2 D
     unsigned int m_carMode;
@@ -363,7 +442,13 @@ private:
     float m_acc_x;
     float m_acc_y;
     float m_acc_z;
-    float m_Yaw;
+    float m_yaw;
+    float m_roll;
+    float m_pitch;
+    unsigned int m_lmcudccur;
+    unsigned int m_rmcudccur;
+    unsigned int m_lmcuaccur;
+    unsigned int m_rmcuaccur;
 };
 
 

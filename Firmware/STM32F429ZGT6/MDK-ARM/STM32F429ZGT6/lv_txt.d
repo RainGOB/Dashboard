@@ -11,6 +11,7 @@ stm32f429zgt6\lv_txt.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../font/lv_font.h
 stm32f429zgt6\lv_txt.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 stm32f429zgt6\lv_txt.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../font/lv_symbol_def.h
 stm32f429zgt6\lv_txt.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_printf.h
+stm32f429zgt6\lv_txt.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 stm32f429zgt6\lv_txt.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_types.h
 stm32f429zgt6\lv_txt.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_txt_ap.h
 stm32f429zgt6\lv_txt.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../draw/lv_draw.h

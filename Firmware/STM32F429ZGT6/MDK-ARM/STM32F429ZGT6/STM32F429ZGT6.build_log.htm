@@ -27,12 +27,13 @@ Project File Date:  07/15/2024
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'STM32F429ZGT6'
-compiling freertos.c...
-../Core/Src/freertos.c(185): warning:  #188-D: enumerated type mixed with another type
-  		lv_event_send(ui_Iot,MQTT_INIT_OK,NULL);
-../Core/Src/freertos.c: 1 warning, 0 errors
+compiling Variable.c...
+compiling app_can.c...
+..\APP\APP_CAN.h(9): warning:  #1295-D: Deprecated declaration acc_sencorCansend - give arg types
+  void acc_sencorCansend();
+..\APP\app_can.c: 1 warning, 0 errors
 linking...
-Program Size: Code=170704 RO-data=493648 RW-data=896 ZI-data=171304  
+Program Size: Code=169924 RO-data=493648 RW-data=904 ZI-data=171328  
 FromELF: creating hex file...
 "STM32F429ZGT6\STM32F429ZGT6.axf" - 0 Error(s), 1 Warning(s).
 
@@ -57,7 +58,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.6.0
-Build Time Elapsed:  00:00:05
+Build Time Elapsed:  00:00:15
 </pre>
 </body>
 </html>

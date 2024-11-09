@@ -10,8 +10,8 @@ import MqttClient
 Window {
 
     visible: true
-    width: 1250
-    height: 680
+    width: 1050
+    height: 550
     color: "#666666"
     //    property alias rectangleX: rectangle.x
     title:  qsTr("LY12-WirelessDashboard")
@@ -52,7 +52,7 @@ Window {
 
         carSpeed: 0
         batLevel: 0
-        batTemp: 0
+        batcur:  0
         throPos: 0
         batVol: 0
         mcu1Temp: 0
@@ -63,10 +63,11 @@ Window {
         rmotorTemp: 0
         lmotorSpeed: 0
         rmotorSpeed: 0
-        angle: 90
-        acc_x: 7
-        acc_y: 7
-        acc_z: -10
+        angle: 45
+        acc_x: 0.4
+        acc_y: 2
+        acc_z:  0.2
+        yaw: 0.03
        // onCarModeChanged: {
        //     if(carMode === 0)
        //     {
@@ -616,7 +617,7 @@ Window {
                         bottom: id_rmotorspeed.bottom
                         horizontalCenter: parent.horizontalCenter
                     }
-                    value: carclient.lmotorSpeed/1000
+                    value: carclient.rmotorSpeed/1000
                     startAngle: id_rmotorspeed.startAngle
                     angleLength: id_rmotorspeed.angleLength / (id_rmotorspeed.maxSpeed / (id_rmotorspeed.numberIndexs - 1))
                 }
@@ -749,7 +750,7 @@ Window {
             width: 38
             height: 62
             color: "#99ccff"
-            text: parseInt(carclient.batVol / 1 % 10)
+            text: parseInt(carclient.batLevel / 1 % 10)
             horizontalAlignment: Text.AlignHCenter
             font.family: "big-numbers"
             font.pixelSize: 35
@@ -761,7 +762,7 @@ Window {
             x: 31
             y: 61
             color: "#b4cfe5"
-            text: qsTr("电池电压")
+            text: qsTr("电池电量")
             font.family: "Tensentype ZhiHeiJ-W4"
             font.pixelSize: 15
         }
@@ -1184,9 +1185,9 @@ Window {
         }
         Rectangle{
             id:indicator
-            width: 9
+            width: 8
             height: width
-            x:-10-width/2+carclient.acc_x/20*100; y:-10-height/2+carclient.acc_y/20*100
+            x:(parent.width/2 - 4) + carclient.acc_y * 40; y:(parent.width/2 - 4) + carclient.acc_x * 40
             color:"red"
             radius: width/2
             opacity: 0.8
@@ -1225,7 +1226,7 @@ Window {
 
         Item {
             id:acczindicator
-            x:240; y:160-(carclient.acc_z/20)*(parent.height-30); z:1
+            x:240; y:(90 - acczbash.width / 2) + carclient.acc_z * 150; z:1
             width: acczbash.width
             Rectangle{
                 id:acczcircle
@@ -1263,7 +1264,7 @@ Window {
             width: 350
             height: 25
             z:1
-            value: carclient.angle
+            value: carclient.angle + 90
         }
     }
 
@@ -1306,6 +1307,184 @@ Window {
             }
         }
     }
+
+    Item{
+        id:accxNum
+        x:  520; y: 100
+        width: 100
+        height:  100
+
+        Text {
+            id: accx_10
+            x: 0
+            y: 0
+            width: 45
+            height: 62
+            color: "#99ccff"
+            text: carclient.acc_x.toFixed(2)
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "big-numbers"
+            font.pixelSize: 35
+            verticalAlignment: Text.AlignVCenter
+        }
+/*
+        Text {
+            id: accx_1
+            x: 31
+            y: 0
+            width: 38
+            height: 62
+            color: "#99ccff"
+            text: parseInt(carclient.accx / 1 % 10)
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "big-numbers"
+            font.pixelSize: 35
+            verticalAlignment: Text.AlignVCenter
+        }
+*/
+        Text {
+            id: accx
+            x: 2
+            y: 56
+            color: "#b4cfe5"
+            text: qsTr("accx")
+            font.family: "Tensentype ZhiHeiJ-W4"
+            font.pixelSize: 15
+        }
+    }
+    Item{
+        id:accyNum
+        x:  680; y: 100
+        width: 100
+        height:  100
+
+        Text {
+            id: accy_10
+            x: 0
+            y: 0
+            width: 45
+            height: 62
+            color: "#99ccff"
+            text: carclient.acc_y.toFixed(2)
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "big-numbers"
+            font.pixelSize: 35
+            verticalAlignment: Text.AlignVCenter
+        }
+/*
+        Text {
+            id: accy_1
+            x: 31
+            y: 0
+            width: 38
+            height: 62
+            color: "#99ccff"
+            text: parseInt(carclient.accy / 1 % 10)
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "big-numbers"
+            font.pixelSize: 35
+            verticalAlignment: Text.AlignVCenter
+        }
+*/
+        Text {
+            id: accy
+            x: 2
+            y: 56
+            color: "#b4cfe5"
+            text: qsTr("accy")
+            font.family: "Tensentype ZhiHeiJ-W4"
+            font.pixelSize: 15
+        }
+    }
+    Item{
+        id:acczNum
+        x:  520; y: 165
+        width: 100
+        height:  100
+
+        Text {
+            id: accz_10
+            x: 0
+            y: 0
+            width: 45
+            height: 62
+            color: "#99ccff"
+            text: carclient.acc_z.toFixed(2)
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "big-numbers"
+            font.pixelSize: 35
+            verticalAlignment: Text.AlignVCenter
+        }
+/*
+        Text {
+            id: accz_1
+            x: 31
+            y: 0
+            width: 38
+            height: 62
+            color: "#99ccff"
+            text: parseInt(carclient.accz / 1 % 10)
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "big-numbers"
+            font.pixelSize: 35
+            verticalAlignment: Text.AlignVCenter
+        }
+*/
+        Text {
+            id: accz
+            x: 2
+            y: 56
+            color: "#b4cfe5"
+            text: qsTr("accz")
+            font.family: "Tensentype ZhiHeiJ-W4"
+            font.pixelSize: 15
+        }
+    }
+    Item{
+        id:yawNum
+        x:  680; y: 165
+        width: 100
+        height:  100
+
+        Text {
+            id: yaw_10
+            x: 0
+            y: 0
+            width: 45
+            height: 62
+            color: "#99ccff"
+            text: carclient.batcur.toFixed(2)
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "big-numbers"
+            font.pixelSize: 35
+            verticalAlignment: Text.AlignVCenter
+        }
+/*
+        Text {
+            id: yaw_1
+            x: 31
+            y: 0
+            width: 38
+            height: 62
+            color: "#99ccff"
+            text: parseInt(carclient.yaw / 1 % 10)
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "big-numbers"
+            font.pixelSize: 35
+            verticalAlignment: Text.AlignVCenter
+        }
+*/
+        Text {
+            id: yaw
+            x: 2
+            y: 56
+            color: "#b4cfe5"
+            text: qsTr("yaw")
+            font.family: "Tensentype ZhiHeiJ-W4"
+            font.pixelSize: 15
+        }
+    }
+
     Button{
         id: subscribebut
         x:900; y:500
